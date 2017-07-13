@@ -1,6 +1,10 @@
 # Introduction
 `wdio parser` aggregates information from JSON reports of WebDriver.io into an exportable data object that can be read into a dashboard.
 
+# Supported frameworks
+
+* [Wdio](http://webdriver.io)
+
 ## Purpose
 
 There are several dashboards some minimalistm, and others that don't fit the ideal look&feel for seeing the results of a WDIO testing framework.
