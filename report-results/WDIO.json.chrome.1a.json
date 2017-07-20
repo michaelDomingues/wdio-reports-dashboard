@@ -1,0 +1,95 @@
+{
+  "start": "2016-08-19T15:08:56.321Z",
+  "end": "2016-08-19T15:09:10.742Z",
+  "capabilities": {
+    "browserName": "chrome",
+    "processNumber": 2
+  },
+  "host": "127.0.0.1",
+  "port": 4444,
+  "baseUrl": "http://webdriver.io",
+  "framework": "mocha",
+  "mochaOpts": {
+    "timeout": 60000,
+    "ui": "bdd"
+  },
+  "suites": [
+    {
+      "name": "#chrome > #Movvo > #Store > #authentication",
+      "duration": 5581,
+      "start": "2016-08-19T15:09:01.014Z",
+      "end": "2016-08-19T15:09:06.595Z",
+      "tests": [
+        {
+          "name": "should go to dashboard endpoint",
+          "start": "2016-08-19T15:09:01.015Z",
+          "end": "2016-08-19T15:09:04.050Z",
+          "duration": 3035,
+          "state": "pass"
+        },
+        {
+          "name": "\"before each\" hook",
+          "start": "2016-08-19T15:09:08.868Z",
+          "end": "2016-08-19T15:09:08.868Z",
+          "duration": 0,
+          "state": ""
+        },
+        {
+          "name": "\"after each\" hook",
+          "start": "2016-08-19T15:09:08.898Z",
+          "end": "2016-08-19T15:09:08.898Z",
+          "duration": 0,
+          "state": ""
+        },
+        {
+          "name": "should authenticate",
+          "start": "2016-08-19T15:09:04.051Z",
+          "end": "2016-08-19T15:09:06.593Z",
+          "duration": 2542,
+          "state": "pass"
+        },
+        {
+          "name": "\"after all\" hook",
+          "start": "2016-08-19T15:09:08.899Z",
+          "end": "2016-08-19T15:09:08.899Z",
+          "duration": 0,
+          "state": ""
+        }
+      ]
+    },
+    {
+      "name": "#chrome > #Movvo > #Store > #global",
+      "duration": 2303,
+      "start": "2016-08-19T15:09:06.595Z",
+      "end": "2016-08-19T15:09:08.898Z",
+      "tests": [
+        {
+          "name": "\"before all\" hook",
+          "start": "2016-08-19T15:09:06.595Z",
+          "end": "2016-08-19T15:09:06.982Z",
+          "duration": 387,
+          "state": ""
+        },
+        {
+          "name": "should enter a space",
+          "start": "2016-08-19T15:09:06.982Z",
+          "end": "2016-08-19T15:09:08.868Z",
+          "duration": 1886,
+          "state": "pass"
+        },
+        {
+          "name": "should test notifications",
+          "start": "2016-08-19T15:09:08.868Z",
+          "end": "2016-08-19T15:09:08.898Z",
+          "duration": 30,
+          "state": "pass"
+        }
+      ]
+    }
+  ],
+  "state": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0
+  }
+}

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QA Report</title>
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <!--  Confs file -->
+    <script type="text/javascript" src="../confs.js"></script>
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-bar-chart"></i> <span>QA Report</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="images/user.png" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>QA</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a>
+                                </li>
+                                <li><a href="defects.html"><i class="fa fa-braille"></i> Defects</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                </div>
+            </div>
+            <!-- /col-md-3 left_col  -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <div class="datePicker">
+                            <!-- class="pull-right"  -->
+                            <!--                             <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                            </div> -->
+                        </div>
+                        <!--  /datePicker -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/user.png" alt="">QA
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--                         <div id="date_info" class="dateTime">
+                            <span></span>
+                        </div> -->
+                    </nav>
+                    <!-- /nav -->
+                </div>
+                <!--  /nav_menu -->
+            </div>
+            <!-- /top_nav -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <!-- top tiles -->
+                <div class="row tile_count">
+                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-cloud"></i> Health</span>
+                        <div class="count">
+                            <canvas id="weather-health" height="48" width="48"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-list-ol"></i> Total Tests</span>
+                        <div id="total_tests" class="count">2500</div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time (sec)</span>
+                        <div id="average_time" class="count">123.50</div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
+                        <span class="count_top"><i class="fa fa-cogs"></i> Environment</span>
+                        <div id="environment" class="count">Dev</div>
+                    </div>
+                </div>
+                <!--  /tile_count -->
+                <!-- /top tiles -->
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="x_panel tile fixed_height_320 overflow_hidden">
+                            <div class="x_title">
+                                <h2>Total Browsers</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content" id="total_browser_chart" style="margin: 0 auto "></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 ">
+                        <div class="x_panel tile fixed_height_320 overflow_hidden ">
+                            <div class="x_title ">
+                                <h2>Total Browsers</h2>
+                                <ul class="nav navbar-right panel_toolbox ">
+                                    <li><a class="collapse-link "><i class="fa fa-chevron-up "></i></a></li>
+                                    <li><a class="close-link "><i class="fa fa-close "></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content" id="total_tests_chart" style="margin: 0 auto"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /1st row -->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="x_panel tile fixed_height_320 overflow_hidden ">
+                            <div class="x_title ">
+                                <h2>Durations splatter</h2>
+                                <ul class="nav navbar-right panel_toolbox ">
+                                    <li><a class="collapse-link "><i class="fa fa-chevron-up "></i></a></li>
+                                    <li><a class="close-link "><i class="fa fa-close "></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content" id="tests_duration_dispersion" style="margin: 0 auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content /right_col -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right ">
+                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com ">Colorlib</a>
+                </div>
+                <div class="clearfix "></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+        <!-- /main_container -->
+    </div>
+    <!-- /container body -->
+    <!--  ######################## SCRIPTS ######################## -->
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js "></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js "></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js "></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js "></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js "></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js "></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js "></script>
+    <!-- Skycons -->
+    <script src="../vendors/skycons/skycons.js "></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js "></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="js/moment/moment.min.js "></script>
+    <script src="js/moment/moment-timezone-with-data.min.js "></script>
+    <script src="js/datepicker/daterangepicker.js "></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js "></script>
+    <!-- Highcharts -->
+    <script src="https://code.highcharts.com/highcharts.js "></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js "></script>
+    
+    <!-- Skycons -->
+    <script>
+    var icons = new Skycons({
+        "color": confs.colors.skycon
+    });;
+    icons.set("weather-health", Skycons.RAIN);
+    icons.play();
+    </script>
+    <!-- /Skycons -->
+    <!-- Test results-->
+    <script>
+    $(document).ready(function() {
+        // Build the chart
+        $('#total_browser_chart').highcharts({
+
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: '',
+                align: 'center',
+                verticalAlign: 'middle',
+                y: 40
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    dataLabels: {
+                        enabled: true,
+                        distance: -50,
+                        style: {
+                            fontWeight: 'bold',
+                            color: 'white',
+                            textShadow: '0px 1px 2px black'
+                        }
+                    },
+                    startAngle: -90,
+                    endAngle: 90,
+                    center: ['50%', '75%']
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: '',
+                innerSize: '50%',
+                data: [
+                    ['Firefox', 1],
+                    ['Chrome', 1],
+                    ['Safari', 1]
+                ]
+            }]
+        });
+    });
+    </script>
+    <!-- Tests result -->
+    <!-- Test duration dispersion -->
+    <script>
+    $(document).ready(function() {
+        // Build the chart
+        $('#tests_duration_dispersion').highcharts({
+            chart: {
+                type: 'bubble',
+                plotBorderWidth: 1,
+                zoomType: 'xy'
+            },
+
+            title: {
+                text: ''
+            },
+
+            xAxis: {
+                title: {
+                    text: "Execution time (msec)"
+                }
+            },
+            yAxis: {
+                min: 0,
+                labels: {
+                    enabled: false
+                },
+                title: {
+                    text: ""
+                }
+            },
+
+            series: [{
+                data: [
+                    [1, 0, 13],
+                    [1, 1, 39],
+                    [2, 2, 25],
+                    [3, 2, 15],
+                    [4, 1, 5],
+                    [5, 3, 45],
+                    [6, 1, 55],
+                    [7, 1, 38],
+                    [8, 3, 33],
+                ],
+            }]
+
+
+        });
+    });
+    </script>
+    <!-- Tests duration dispersion -->
+    <!-- Doughnut Chart -->
+    <script>
+    $(document).ready(function() {
+        var total = 10;
+        $('#total_tests_chart').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: ['']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>' + this.series.name + '</b> : <b>' + this.y + '</b> (' + (this.y / total) * 100 + '%)';
+                }
+            },
+            series: [{
+                name: 'Passed',
+                data: [5],
+                color: confs.colors.passed
+            }, {
+                name: 'Failed',
+                data: [2],
+                color: confs.colors.failed
+            }, {
+                name: 'Skipped',
+                data: [3],
+                color: confs.colors.skipped
+            }]
+        });
+    });
+    </script>
+    <!-- /Doughnut Chart -->
+    <!-- Date in top navigation bar -->
+    <script type="text/javascript ">
+    $(document).ready(function() {
+        setInterval(display_ct, 1000)
+
+        function display_ct() {
+            tretas = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            var today = moment.tz(tretas);
+            $('#date_info span').html(today.format('MMMM Do YYYY HH:mm:ss'));
+        }
+    });
+    </script>
+    <!-- bootstrap-daterangepicker -->
+    <script>
+    $(document).ready(function() {
+        var cb = function(start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        };
+        var optionSet1 = {
+            startDate: moment().subtract(29, 'days'),
+            endDate: moment(),
+            minDate: '01/01/2012',
+            maxDate: '12/31/2015',
+            dateLimit: {
+                days: 60
+            },
+            showDropdowns: true,
+            showWeekNumbers: true,
+            timePicker: false,
+            timePickerIncrement: 1,
+            timePicker12Hour: true,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            opens: 'left',
+            buttonClasses: ['btn btn-default'],
+            applyClass: 'btn-small btn-primary',
+            cancelClass: 'btn-small',
+            format: 'MM/DD/YYYY',
+            separator: ' to ',
+            locale: {
+                applyLabel: 'Submit',
+                cancelLabel: 'Clear',
+                fromLabel: 'From',
+                toLabel: 'To',
+                customRangeLabel: 'Custom',
+                daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                firstDay: 1
+            }
+        };
+        $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+        $('#reportrange').daterangepicker(optionSet1, cb);
+        $('#reportrange').on('show.daterangepicker', function() {
+            console.log("show event fired ");
+        });
+        $('#reportrange').on('hide.daterangepicker', function() {
+            console.log("hide event fired ");
+        });
+        $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
+            console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
+        });
+        $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
+            console.log("cancel event fired ");
+        });
+        $('#options1').click(function() {
+            $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+        });
+        $('#options2').click(function() {
+            $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
+        });
+        $('#destroy').click(function() {
+            $('#reportrange').data('daterangepicker').remove();
+        });
+    });
+    </script>
+    <!-- /bootstrap-daterangepicker -->
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+{
+  "start": "2016-08-19T15:04:37.438Z",
+  "end": "2016-08-19T15:08:14.347Z",
+  "capabilities": {
+    "browserName": "firefox",
+    "processNumber": 4
+  },
+  "host": "127.0.0.1",
+  "port": 4444,
+  "baseUrl": "http://webdriver.io",
+  "framework": "mocha",
+  "mochaOpts": {
+    "timeout": 60000,
+    "ui": "bdd"
+  },
+  "suites": [
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #authentication",
+      "duration": 10113,
+      "start": "2016-08-19T15:04:55.149Z",
+      "end": "2016-08-19T15:05:05.262Z",
+      "tests": [
+        {
+          "name": "should go to dashboard endpoint",
+          "start": "2016-08-19T15:04:55.150Z",
+          "end": "2016-08-19T15:04:58.978Z",
+          "duration": 3828,
+          "state": "pass"
+        },
+        {
+          "name": "\"before each\" hook",
+          "start": "2016-08-19T15:06:40.781Z",
+          "end": "2016-08-19T15:06:40.781Z",
+          "duration": 0,
+          "state": ""
+        },
+        {
+          "name": "\"after each\" hook",
+          "start": "2016-08-19T15:06:45.790Z",
+          "end": "2016-08-19T15:06:45.790Z",
+          "duration": 0,
+          "state": ""
+        },
+        {
+          "name": "should authenticate",
+          "start": "2016-08-19T15:04:58.978Z",
+          "end": "2016-08-19T15:05:05.261Z",
+          "duration": 6283,
+          "state": "pass"
+        },
+        {
+          "name": "\"after all\" hook",
+          "start": "2016-08-19T15:06:45.790Z",
+          "end": "2016-08-19T15:06:45.790Z",
+          "duration": 0,
+          "state": ""
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #global",
+      "duration": 12893,
+      "start": "2016-08-19T15:05:05.262Z",
+      "end": "2016-08-19T15:05:18.155Z",
+      "tests": [
+        {
+          "name": "\"before all\" hook",
+          "start": "2016-08-19T15:05:05.263Z",
+          "end": "2016-08-19T15:05:05.739Z",
+          "duration": 476,
+          "state": ""
+        },
+        {
+          "name": "should enter a space",
+          "start": "2016-08-19T15:05:05.739Z",
+          "end": "2016-08-19T15:05:08.191Z",
+          "duration": 2452,
+          "state": "pass"
+        },
+        {
+          "name": "should activate a comparison period",
+          "start": "2016-08-19T15:05:08.191Z",
+          "end": "2016-08-19T15:05:16.792Z",
+          "duration": 8601,
+          "state": "pass"
+        },
+        {
+          "name": "should retrieve date picker info",
+          "start": "2016-08-19T15:05:16.800Z",
+          "end": "2016-08-19T15:05:18.154Z",
+          "duration": 1354,
+          "state": "pass"
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #Overview",
+      "duration": 12974,
+      "start": "2016-08-19T15:05:18.155Z",
+      "end": "2016-08-19T15:05:31.129Z",
+      "tests": [
+        {
+          "name": "should enter module view",
+          "start": "2016-08-19T15:05:18.155Z",
+          "end": "2016-08-19T15:05:22.656Z",
+          "duration": 4501,
+          "state": "pass"
+        },
+        {
+          "name": "should comparison data values be visible",
+          "start": "2016-08-19T15:05:22.657Z",
+          "end": "2016-08-19T15:05:24.219Z",
+          "duration": 1562,
+          "state": "pass"
+        },
+        {
+          "name": "should all chart toggles be as expected",
+          "start": "2016-08-19T15:05:24.219Z",
+          "end": "2016-08-19T15:05:31.129Z",
+          "duration": 6910,
+          "state": "pass"
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #Visits",
+      "duration": 10436,
+      "start": "2016-08-19T15:05:31.130Z",
+      "end": "2016-08-19T15:05:41.566Z",
+      "tests": [
+        {
+          "name": "should enter module view",
+          "start": "2016-08-19T15:05:31.130Z",
+          "end": "2016-08-19T15:05:33.513Z",
+          "duration": 2383,
+          "state": "pass"
+        },
+        {
+          "name": "should comparison data values be visible",
+          "start": "2016-08-19T15:05:33.514Z",
+          "end": "2016-08-19T15:05:35.163Z",
+          "duration": 1649,
+          "state": "pass"
+        },
+        {
+          "name": "should all chart toggles be as expected",
+          "start": "2016-08-19T15:05:35.164Z",
+          "end": "2016-08-19T15:05:41.566Z",
+          "duration": 6402,
+          "state": "pass"
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #Durations",
+      "duration": 9104,
+      "start": "2016-08-19T15:05:41.566Z",
+      "end": "2016-08-19T15:05:50.670Z",
+      "tests": [
+        {
+          "name": "should enter module view",
+          "start": "2016-08-19T15:05:41.566Z",
+          "end": "2016-08-19T15:05:42.890Z",
+          "duration": 1324,
+          "state": "pass"
+        },
+        {
+          "name": "should comparison data values be visible",
+          "start": "2016-08-19T15:05:42.891Z",
+          "end": "2016-08-19T15:05:43.025Z",
+          "duration": 134,
+          "state": "pass"
+        },
+        {
+          "name": "should all chart toggles be as expected",
+          "start": "2016-08-19T15:05:43.025Z",
+          "end": "2016-08-19T15:05:50.669Z",
+          "duration": 7644,
+          "state": "pass"
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #Levels",
+      "duration": 12632,
+      "start": "2016-08-19T15:05:50.670Z",
+      "end": "2016-08-19T15:06:03.302Z",
+      "tests": [
+        {
+          "name": "should enter module view",
+          "start": "2016-08-19T15:05:50.671Z",
+          "end": "2016-08-19T15:05:54.236Z",
+          "duration": 3565,
+          "state": "pass"
+        },
+        {
+          "name": "should comparison data values be visible",
+          "start": "2016-08-19T15:05:54.677Z",
+          "end": "2016-08-19T15:05:54.897Z",
+          "duration": 220,
+          "state": "pass"
+        },
+        {
+          "name": "should all chart toggles be as expected",
+          "start": "2016-08-19T15:05:54.897Z",
+          "end": "2016-08-19T15:06:03.301Z",
+          "duration": 8404,
+          "state": "pass"
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #Zones",
+      "duration": 16767,
+      "start": "2016-08-19T15:06:03.302Z",
+      "end": "2016-08-19T15:06:20.069Z",
+      "tests": [
+        {
+          "name": "should enter module view",
+          "start": "2016-08-19T15:06:03.302Z",
+          "end": "2016-08-19T15:06:10.887Z",
+          "duration": 7585,
+          "state": "pass"
+        },
+        {
+          "name": "should comparison data values be visible",
+          "start": "2016-08-19T15:06:11.230Z",
+          "end": "2016-08-19T15:06:11.344Z",
+          "duration": 114,
+          "state": "pass"
+        },
+        {
+          "name": "should all chart toggles be as expected",
+          "start": "2016-08-19T15:06:11.346Z",
+          "end": "2016-08-19T15:06:20.069Z",
+          "duration": 8723,
+          "state": "pass"
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #Accesses",
+      "duration": 9748,
+      "start": "2016-08-19T15:06:20.069Z",
+      "end": "2016-08-19T15:06:29.817Z",
+      "tests": [
+        {
+          "name": "should enter module view",
+          "start": "2016-08-19T15:06:20.069Z",
+          "end": "2016-08-19T15:06:22.241Z",
+          "duration": 2172,
+          "state": "pass"
+        },
+        {
+          "name": "should comparison data values be visible",
+          "start": "2016-08-19T15:06:22.518Z",
+          "end": "2016-08-19T15:06:22.592Z",
+          "duration": 74,
+          "state": "pass"
+        },
+        {
+          "name": "should all chart toggles be as expected",
+          "start": "2016-08-19T15:06:22.592Z",
+          "end": "2016-08-19T15:06:29.816Z",
+          "duration": 7224,
+          "state": "pass"
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #Patterns",
+      "duration": 7729,
+      "start": "2016-08-19T15:06:29.817Z",
+      "end": "2016-08-19T15:06:37.546Z",
+      "tests": [
+        {
+          "name": "should enter module view",
+          "start": "2016-08-19T15:06:29.817Z",
+          "end": "2016-08-19T15:06:32.515Z",
+          "duration": 2698,
+          "state": "pass"
+        },
+        {
+          "name": "should comparison data values be visible",
+          "start": "2016-08-19T15:06:32.516Z",
+          "end": "2016-08-19T15:06:32.519Z",
+          "duration": 3,
+          "state": "pass"
+        },
+        {
+          "name": "should all chart toggles be as expected",
+          "start": "2016-08-19T15:06:32.519Z",
+          "end": "2016-08-19T15:06:37.546Z",
+          "duration": 5027,
+          "state": "pass"
+        }
+      ]
+    },
+    {
+      "name": "#firefox > #NorteShopping > #Shopping > #Reports",
+      "duration": 8244,
+      "start": "2016-08-19T15:06:37.546Z",
+      "end": "2016-08-19T15:06:45.790Z",
+      "tests": [
+        {
+          "name": "should enter module view",
+          "start": "2016-08-19T15:06:37.546Z",
+          "end": "2016-08-19T15:06:40.778Z",
+          "duration": 3232,
+          "state": "pass"
+        },
+        {
+          "name": "should comparison data values be visible",
+          "start": "2016-08-19T15:06:40.778Z",
+          "end": "2016-08-19T15:06:40.781Z",
+          "duration": 3,
+          "state": "pass"
+        },
+        {
+          "name": "should all chart toggles be as expected",
+          "start": "2016-08-19T15:06:40.781Z",
+          "end": "2016-08-19T15:06:45.790Z",
+          "duration": 5009,
+          "state": "pass"
+        }
+      ]
+    }
+  ],
+  "state": {
+    "passed": 29,
+    "failed": 0,
+    "skipped": 0
+  }
+}

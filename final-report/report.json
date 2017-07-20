@@ -1,0 +1,759 @@
+{
+  "numberOfTestSuites": 6,
+  "numberOfPassedTests": 99,
+  "numberOfSkippedTests": 24,
+  "numberOfFailedTests": 0,
+  "testsWeatherState": "cloudy",
+  "totalDuration": 289195,
+  "browsers": [
+    "chrome",
+    "firefox",
+    "safari"
+  ],
+  "testsPerBrowser": {
+    "chrome": [
+      {
+        "testSuite": "#chrome > #Movvo > #Store > #authentication",
+        "testCase": "should go to dashboard endpoint",
+        "duration": 3035,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #Movvo > #Store > #authentication",
+        "testCase": "\"before each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#chrome > #Movvo > #Store > #authentication",
+        "testCase": "\"after each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#chrome > #Movvo > #Store > #authentication",
+        "testCase": "should authenticate",
+        "duration": 2542,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #Movvo > #Store > #authentication",
+        "testCase": "\"after all\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#chrome > #Movvo > #Store > #global",
+        "testCase": "\"before all\" hook",
+        "duration": 387,
+        "state": ""
+      },
+      {
+        "testSuite": "#chrome > #Movvo > #Store > #global",
+        "testCase": "should enter a space",
+        "duration": 1886,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #Movvo > #Store > #global",
+        "testCase": "should test notifications",
+        "duration": 30,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #authentication",
+        "testCase": "should go to dashboard endpoint",
+        "duration": 3628,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"before each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"after each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #authentication",
+        "testCase": "should authenticate",
+        "duration": 2431,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"after all\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #global",
+        "testCase": "\"before all\" hook",
+        "duration": 395,
+        "state": ""
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #global",
+        "testCase": "should enter a space",
+        "duration": 6067,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #global",
+        "testCase": "should activate a comparison period",
+        "duration": 3602,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #global",
+        "testCase": "should retrieve date picker info",
+        "duration": 1027,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should enter module view",
+        "duration": 1350,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should comparison data values be visible",
+        "duration": 1787,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 6003,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should enter module view",
+        "duration": 994,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should comparison data values be visible",
+        "duration": 1693,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5887,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should enter module view",
+        "duration": 630,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should comparison data values be visible",
+        "duration": 159,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5787,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should enter module view",
+        "duration": 1023,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should comparison data values be visible",
+        "duration": 169,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 7789,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should enter module view",
+        "duration": 2398,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should comparison data values be visible",
+        "duration": 106,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 8638,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should enter module view",
+        "duration": 1506,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should comparison data values be visible",
+        "duration": 146,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 6443,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should enter module view",
+        "duration": 1444,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should comparison data values be visible",
+        "duration": 3,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5029,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should enter module view",
+        "duration": 3098,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should comparison data values be visible",
+        "duration": 4,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#chrome > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5010,
+        "state": "pass"
+      }
+    ],
+    "firefox": [
+      {
+        "testSuite": "#firefox > #Movvo > #Store > #authentication",
+        "testCase": "should go to dashboard endpoint",
+        "duration": 2735,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #Movvo > #Store > #authentication",
+        "testCase": "\"before each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#firefox > #Movvo > #Store > #authentication",
+        "testCase": "\"after each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#firefox > #Movvo > #Store > #authentication",
+        "testCase": "should authenticate",
+        "duration": 2717,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #Movvo > #Store > #authentication",
+        "testCase": "\"after all\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#firefox > #Movvo > #Store > #global",
+        "testCase": "\"before all\" hook",
+        "duration": 363,
+        "state": ""
+      },
+      {
+        "testSuite": "#firefox > #Movvo > #Store > #global",
+        "testCase": "should enter a space",
+        "duration": 2031,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #Movvo > #Store > #global",
+        "testCase": "should test notifications",
+        "duration": 23,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #authentication",
+        "testCase": "should go to dashboard endpoint",
+        "duration": 3828,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"before each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"after each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #authentication",
+        "testCase": "should authenticate",
+        "duration": 6283,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"after all\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #global",
+        "testCase": "\"before all\" hook",
+        "duration": 476,
+        "state": ""
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #global",
+        "testCase": "should enter a space",
+        "duration": 2452,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #global",
+        "testCase": "should activate a comparison period",
+        "duration": 8601,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #global",
+        "testCase": "should retrieve date picker info",
+        "duration": 1354,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should enter module view",
+        "duration": 4501,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should comparison data values be visible",
+        "duration": 1562,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 6910,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should enter module view",
+        "duration": 2383,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should comparison data values be visible",
+        "duration": 1649,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 6402,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should enter module view",
+        "duration": 1324,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should comparison data values be visible",
+        "duration": 134,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 7644,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should enter module view",
+        "duration": 3565,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should comparison data values be visible",
+        "duration": 220,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 8404,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should enter module view",
+        "duration": 7585,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should comparison data values be visible",
+        "duration": 114,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 8723,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should enter module view",
+        "duration": 2172,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should comparison data values be visible",
+        "duration": 74,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 7224,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should enter module view",
+        "duration": 2698,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should comparison data values be visible",
+        "duration": 3,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5027,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should enter module view",
+        "duration": 3232,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should comparison data values be visible",
+        "duration": 3,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#firefox > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5009,
+        "state": "pass"
+      }
+    ],
+    "safari": [
+      {
+        "testSuite": "#safari > #Movvo > #Store > #authentication",
+        "testCase": "should go to dashboard endpoint",
+        "duration": 2491,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #Movvo > #Store > #authentication",
+        "testCase": "\"before each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#safari > #Movvo > #Store > #authentication",
+        "testCase": "\"after each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#safari > #Movvo > #Store > #authentication",
+        "testCase": "should authenticate",
+        "duration": 2116,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #Movvo > #Store > #authentication",
+        "testCase": "\"after all\" hook",
+        "duration": 1,
+        "state": ""
+      },
+      {
+        "testSuite": "#safari > #Movvo > #Store > #global",
+        "testCase": "\"before all\" hook",
+        "duration": 334,
+        "state": ""
+      },
+      {
+        "testSuite": "#safari > #Movvo > #Store > #global",
+        "testCase": "should enter a space",
+        "duration": 1918,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #Movvo > #Store > #global",
+        "testCase": "should test notifications",
+        "duration": 23,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #authentication",
+        "testCase": "should go to dashboard endpoint",
+        "duration": 2404,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"before each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"after each\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #authentication",
+        "testCase": "should authenticate",
+        "duration": 2093,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #authentication",
+        "testCase": "\"after all\" hook",
+        "duration": 0,
+        "state": ""
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #global",
+        "testCase": "\"before all\" hook",
+        "duration": 386,
+        "state": ""
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #global",
+        "testCase": "should enter a space",
+        "duration": 1621,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #global",
+        "testCase": "should activate a comparison period",
+        "duration": 2487,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #global",
+        "testCase": "should retrieve date picker info",
+        "duration": 719,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should enter module view",
+        "duration": 836,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should comparison data values be visible",
+        "duration": 1189,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Overview",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 6334,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should enter module view",
+        "duration": 876,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should comparison data values be visible",
+        "duration": 1528,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Visits",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 6084,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should enter module view",
+        "duration": 645,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should comparison data values be visible",
+        "duration": 121,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Durations",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5855,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should enter module view",
+        "duration": 642,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should comparison data values be visible",
+        "duration": 62,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Levels",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5986,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should enter module view",
+        "duration": 3424,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should comparison data values be visible",
+        "duration": 24,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Zones",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 6878,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should enter module view",
+        "duration": 2905,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should comparison data values be visible",
+        "duration": 38,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Accesses",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5893,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should enter module view",
+        "duration": 642,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should comparison data values be visible",
+        "duration": 4,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Patterns",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5020,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should enter module view",
+        "duration": 3055,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should comparison data values be visible",
+        "duration": 3,
+        "state": "pass"
+      },
+      {
+        "testSuite": "#safari > #NorteShopping > #Shopping > #Reports",
+        "testCase": "should all chart toggles be as expected",
+        "duration": 5007,
+        "state": "pass"
+      }
+    ]
+  }
+}

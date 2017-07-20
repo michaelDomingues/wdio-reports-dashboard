@@ -1,0 +1,27 @@
+{
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "arrow-body-style": [2, "always"],
+    "brace-style": [2, "1tbs", {"allowSingleLine": true}],
+    "comma-dangle": [2, "never"],
+    "func-names": "off",
+    "global-require": "off",
+    "max-len": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}],
+    "no-unused-expressions": "off", // needs to be disabled due to expect api
+    "no-unused-labels": "error",
+    "no-unused-vars": "error",
+    "object-curly-spacing": [2, "never"],
+    "quotes": [2, "single", {"allowTemplateLiterals": true}],
+
+    // Plugins
+    "import/no-dynamic-require": "off"
+  }
+}

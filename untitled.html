@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+</<body>
+<div id='xpto'></div>
+</body>
+<!-- jQuery -->
+<script src="./vendors/jquery/dist/jquery.min.js "></script>
+<!-- Highcharts -->
+<script src="https://code.highcharts.com/highcharts.js "></script>
+<script src="https://code.highcharts.com/modules/exporting.js "></script>
+<script>
+$(document).ready(function() {
+    var total = 10;
+    $('#xpto').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        tooltip: {
+            formatter: function() {
+                return '<b>' + this.series.name + '</b> : <b>' + this.y + '</b> (' + (this.y / total) * 100 + '%)';
+            }
+        },
+        series: [{
+            name: 'Passed',
+            data: [5],
+            color: '#04af65'
+        }, {
+            name: 'Failed',
+            data: [2],
+            color: 'red'
+        }, {
+            name: 'Skipped',
+            data: [3],
+            color: '#cccc00'
+        }]
+    });
+});
+</script>
+
+</html>
