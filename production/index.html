@@ -99,25 +99,8 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <!-- top tiles -->
-                <div class="row tile_count">
-                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-cloud"></i> Health</span>
-                        <div class="count">
-                            <canvas id="weather-health" height="48" width="48"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-list-ol"></i> Total Tests</span>
-                        <div id="total_tests" class="count">0</div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time (msec)</span>
-                        <div id="average_time" class="count">0.0</div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-cogs"></i> Environment</span>
-                        <div id="environment" class="count">Dev</div>
-                    </div>
+                <div id="stats_header" class="row tile_count">
+                    <!-- STATS HEADER -->
                 </div>
                 <!--  /tile_count -->
                 <!-- /top tiles -->
@@ -210,36 +193,17 @@
     <script src="https://code.highcharts.com/highcharts.js "></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js "></script>
-    
-    <!-- Skycons -->
+    <!-- Stats header -->
     <script>
-    finalReportWeatherState((reportData) =>{
-        var icons = new Skycons({
-            "color": confs.colors.skycon
-        });;
-        icons.set("weather-health", Skycons[reportData]);
-        icons.play();
+    finalReportAverageTime((reportData) => {
+        $('#stats_header').load('./stats_header.html');
     });
     </script>
-    <!-- /Skycons -->
-    <!-- Total Tests -->
-    <script>
-    finalReportTotalTests((reportData) =>{
-        $('#total_tests').html(reportData);
-    });
-    </script>
-    <!-- /Total Tests -->
-    <!-- Average Time -->
-    <script>
-    finalReportAverageTime((reportData) =>{
-        $('#average_time').html(reportData);
-    });
-    </script>
-    <!-- /Average Time -->
+    <!-- /Stats header -->
     <!-- Doughnut Chart-->
     <script>
     $(document).ready(function() {
-          finalReportBrowsers((reportData) =>{
+        finalReportBrowsers((reportData) => {
             // Build the chart
             $('#total_browser_chart').highcharts({
                 chart: {
@@ -290,7 +254,7 @@
     <!-- Test duration dispersion -->
     <script>
     $(document).ready(function() {
-        finalReportTestsDuration((reportData) =>{
+        finalReportTestsDuration((reportData) => {
             // Build the chart
             $('#tests_duration_dispersion').highcharts({
                 chart: {
@@ -354,7 +318,7 @@
                     }
                 },
                 series: reportData
-                });
+            });
         });
     });
     </script>
@@ -362,7 +326,7 @@
     <!-- Stacked bar tests results chart -->
     <script>
     $(document).ready(function() {
-        finalReportTestsByState((reportData) =>{
+        finalReportTestsByState((reportData) => {
             $('#total_tests_chart').highcharts({
                 chart: {
                     type: 'bar'
@@ -392,7 +356,7 @@
                 },
                 tooltip: {
                     formatter: function() {
-                        return '<b>' + this.series.name + '</b> : <b>' + this.y + '</b> (' + Math.round((this.y / reportData.totalTests) * 100,2) + '%)';
+                        return '<b>' + this.series.name + '</b> : <b>' + this.y + '</b> (' + Math.round((this.y / reportData.totalTests) * 100, 2) + '%)';
                     }
                 },
                 series: reportData.chartData

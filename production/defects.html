@@ -25,7 +25,7 @@
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
     <!--  Confs file -->
-    <script type="text/javascript" language="javascript" src="../confs.js"></script> 
+    <script type="text/javascript" language="javascript" src="../confs.js"></script>
 </head>
 
 <body class="nav-md">
@@ -101,25 +101,8 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <!-- top tiles -->
-                <div class="row tile_count">
-                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-cloud"></i> Health</span>
-                        <div class="count">
-                            <canvas id="weather-health" height="48" width="48"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-list-ol"></i> Total Tests</span>
-                        <div id="total_tests" class="count">2500</div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time (sec)</span>
-                        <div id="average_time" class="count">123.50</div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-cogs"></i> Environment</span>
-                        <div id="environment" class="count">Dev</div>
-                    </div>
+                <div id="stats_header" class="row tile_count">
+                    <!-- STATS HEADER -->
                 </div>
                 <!--  /tile_count -->
                 <!-- /top tiles -->
@@ -239,15 +222,15 @@
     <script src="../vendors/jszip/dist/jszip.min.js"></script>
     <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
-    <!-- Skycons -->
+    <!-- Project utils -->
+    <script src="js/utilities/utils.js"></script>
+    <!-- Stats header -->
     <script>
-    var icons = new Skycons({
-        "color": confs.colors.skycon
-    });;
-    icons.set("weather-health", Skycons.RAIN);
-    icons.play();
+    finalReportAverageTime((reportData) => {
+        $('#stats_header').load('./stats_header.html');
+    });
     </script>
-    <!-- /Skycons -->
+    <!-- /Stats header -->
     <!-- Test suites -->
     <script>
     $(document).ready(function() {
@@ -377,7 +360,7 @@
                 }, {
                     extend: "print",
                     className: "btn-sm"
-                }, ],                
+                }, ],
                 data: [{
                     "Master suite": "#firefox > #NorteShopping > #Shopping > #Patterns",
                     "Title": "should enter module view",
