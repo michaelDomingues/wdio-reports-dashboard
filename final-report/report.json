@@ -1,8 +1,19 @@
 {
   "numberOfTestSuites": 6,
-  "numberOfPassedTests": 99,
-  "numberOfSkippedTests": 24,
-  "numberOfFailedTests": 0,
+  "testsState": [
+    {
+      "state": "Passed",
+      "total": 99
+    },
+    {
+      "state": "Failed",
+      "total": 0
+    },
+    {
+      "state": "Skipped",
+      "total": 24
+    }
+  ],
   "testsWeatherState": "cloudy",
   "totalDuration": 289195,
   "browsers": [

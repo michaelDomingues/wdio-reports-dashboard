@@ -138,7 +138,7 @@
                     <div class="col-md-6 col-sm-6 col-xs-6 ">
                         <div class="x_panel tile fixed_height_320 overflow_hidden ">
                             <div class="x_title ">
-                                <h2>Total Browsers</h2>
+                                <h2>Total Tests</h2>
                                 <ul class="nav navbar-right panel_toolbox ">
                                     <li><a class="collapse-link "><i class="fa fa-chevron-up "></i></a></li>
                                     <li><a class="close-link "><i class="fa fa-close "></i></a></li>
@@ -218,55 +218,60 @@
     icons.play();
     </script>
     <!-- /Skycons -->
-    <!-- Test results-->
+    <!-- Doughnut Chart-->
     <script>
     $(document).ready(function() {
-        // Build the chart
-        $('#total_browser_chart').highcharts({
-
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: 0,
-                plotShadow: false
-            },
-            credits: {
-                enabled: false
-            },
-            title: {
-                text: '',
-                align: 'center',
-                verticalAlign: 'middle',
-                y: 40
-            },
-            tooltip: {
-                pointFormat: '<b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    dataLabels: {
-                        enabled: true,
-                        distance: -50,
-                        style: {
-                            fontWeight: 'bold',
-                            color: 'white',
-                            textShadow: '0px 1px 2px black'
-                        }
-                    },
-                    startAngle: -90,
-                    endAngle: 90,
-                    center: ['50%', '75%']
-                }
-            },
-            series: [{
-                type: 'pie',
-                name: '',
-                innerSize: '50%',
-                data: [
-                    ['Firefox', 1],
-                    ['Chrome', 1],
-                    ['Safari', 1]
-                ]
-            }]
+        var file = '../final-report/report.json';
+        $.getJSON( file, function(reportData) {
+          var chartData = [];
+          var dataColors = [];
+          $.each(reportData.browsers, function(pos,browser){
+            chartData.push([browser,1]);
+            dataColors.push(confs.colors[browser]);
+          });
+            // Build the chart
+            $('#total_browser_chart').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false
+                },
+                credits: {
+                    enabled: false
+                },
+                title: {
+                    text: '',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    y: 40
+                },
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        dataLabels: {
+                            enabled: true,
+                            distance: -50,
+                            style: {
+                                fontWeight: 'bold',
+                                color: 'white',
+                                textShadow: '0px 1px 2px black'
+                            }
+                        },
+                        startAngle: -90,
+                        endAngle: 90,
+                        center: ['50%', '75%'],
+                        colors: dataColors,
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '',
+                    innerSize: '50%',
+                    data: chartData
+                }]
+            });
         });
     });
     </script>
@@ -274,101 +279,139 @@
     <!-- Test duration dispersion -->
     <script>
     $(document).ready(function() {
-        // Build the chart
-        $('#tests_duration_dispersion').highcharts({
-            chart: {
-                type: 'bubble',
-                plotBorderWidth: 1,
-                zoomType: 'xy'
-            },
-
-            title: {
-                text: ''
-            },
-
-            xAxis: {
-                title: {
-                    text: "Execution time (msec)"
-                }
-            },
-            yAxis: {
-                min: 0,
-                labels: {
-                    enabled: false
+        var file = '../final-report/report.json';
+        $.getJSON( file, function(reportData) {
+          var chartData = [];
+          $.each(reportData.testsPerBrowser, function(pos,browser){
+                var browserData = {
+                    name: pos,
+                    color: confs.colors[browser],
+                    data: []
+                };
+                $.each(browser, function(pos,browserTest){
+                    browserData.data.push([browserTest.duration,pos]);
+                });
+                chartData.push(browserData);
+          });
+            // Build the chart
+            $('#tests_duration_dispersion').highcharts({
+                chart: {
+                    type: 'scatter',
+                    zoomType: 'xy'
                 },
                 title: {
-                    text: ""
-                }
-            },
-
-            series: [{
-                data: [
-                    [1, 0, 13],
-                    [1, 1, 39],
-                    [2, 2, 25],
-                    [3, 2, 15],
-                    [4, 1, 5],
-                    [5, 3, 45],
-                    [6, 1, 55],
-                    [7, 1, 38],
-                    [8, 3, 33],
-                ],
-            }]
-
-
+                    text: 'Tests duration dispersion'
+                },
+                credits: {
+                    enabled: false
+                },
+                xAxis: {
+                    min: 0,
+                    title: {
+                        enabled: true,
+                        text: 'Duration (ms)'
+                    },
+                    startOnTick: true,
+                    endOnTick: true,
+                    showLastLabel: true
+                },
+                yAxis: {
+                    title: {
+                        enabled: false,
+                        text: 'Weight (kg)'
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'left',
+                    verticalAlign: 'top',
+                    x: 100,
+                    y: 0,
+                    floating: true,
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+                    borderWidth: 1
+                },
+                plotOptions: {
+                    scatter: {
+                        marker: {
+                            radius: 5,
+                            states: {
+                                hover: {
+                                    enabled: true,
+                                    lineColor: 'rgb(100,100,100)'
+                                }
+                            }
+                        },
+                        states: {
+                            hover: {
+                                marker: {
+                                    enabled: false
+                                }
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{series.name}</b><br>',
+                            pointFormat: '{point.x} ms'
+                        }
+                    }
+                },
+                series: chartData
+                });
         });
     });
     </script>
     <!-- Tests duration dispersion -->
-    <!-- Doughnut Chart -->
+    <!-- Stacked bar tests results chart -->
     <script>
     $(document).ready(function() {
-        var total = 10;
-        $('#total_tests_chart').highcharts({
-            chart: {
-                type: 'bar'
-            },
-            credits: {
-                enabled: false
-            },
-            title: {
-                text: ''
-            },
-            xAxis: {
-                categories: ['']
-            },
-            yAxis: {
-                min: 0,
+        var file = '../final-report/report.json';
+        $.getJSON( file, function(reportData) {
+          var chartData = [];
+          var totalTests = 0;
+          $.each(reportData.testsState, function(pos,testResult){
+            const state = testResult.state;
+            totalTests += testResult.total;
+            var elem = {
+                    name: state,
+                    data: [testResult.total],
+                    color: confs.colors[state.toLowerCase()]
+                };
+            chartData.push(elem);
+          });
+            $('#total_tests_chart').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                credits: {
+                    enabled: false
+                },
                 title: {
                     text: ''
-                }
-            },
-            legend: {
-                reversed: true
-            },
-            plotOptions: {
-                series: {
-                    stacking: 'normal'
-                }
-            },
-            tooltip: {
-                formatter: function() {
-                    return '<b>' + this.series.name + '</b> : <b>' + this.y + '</b> (' + (this.y / total) * 100 + '%)';
-                }
-            },
-            series: [{
-                name: 'Passed',
-                data: [5],
-                color: confs.colors.passed
-            }, {
-                name: 'Failed',
-                data: [2],
-                color: confs.colors.failed
-            }, {
-                name: 'Skipped',
-                data: [3],
-                color: confs.colors.skipped
-            }]
+                },
+                xAxis: {
+                    categories: ['']
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+                legend: {
+                    reversed: true
+                },
+                plotOptions: {
+                    series: {
+                        stacking: 'normal'
+                    }
+                },
+                tooltip: {
+                    formatter: function() {
+                        return '<b>' + this.series.name + '</b> : <b>' + this.y + '</b> (' + Math.round((this.y / totalTests) * 100,2) + '%)';
+                    }
+                },
+                series: chartData
+            });
         });
     });
     </script>

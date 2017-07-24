@@ -149,9 +149,17 @@ class Metriquer {
   generateFinalReport() {
     const obj = {
       numberOfTestSuites: this._numberOfTestSuites,
-      numberOfPassedTests: this._numberOfPassedTests,
-      numberOfSkippedTests: this._numberOfSkippedTests,
-      numberOfFailedTests: this._numberOfFailedTests,
+      testsState: [{
+        state: 'Passed',
+        total: this._numberOfPassedTests
+      }, {
+        state: 'Failed',
+        total: this._numberOfFailedTests
+      }, {
+        state: 'Skipped',
+        total: this._numberOfSkippedTests
+
+      }],
       testsWeatherState: this.weatherState,
       totalDuration: this._totalDuration,
       browsers: this.browsers,
