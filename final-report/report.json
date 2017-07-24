@@ -1,5 +1,6 @@
 {
   "numberOfTestSuites": 6,
+  "totalTests": 123,
   "testsState": [
     {
       "state": "Passed",
@@ -14,7 +15,7 @@
       "total": 24
     }
   ],
-  "testsWeatherState": "cloudy",
+  "testsWeatherState": "CLOUDY",
   "totalDuration": 289195,
   "browsers": [
     "chrome",

@@ -10,6 +10,7 @@ class Metriquer {
     this._reports = './report-results';
     this._finalReport = './final-report/report.json';
     this._numberOfTestSuites = 0;
+    this._numberOfTests = 0;
     this._numberOfPassedTests = 0;
     this._numberOfSkippedTests = 0;
     this._numberOfFailedTests = 0;
@@ -18,10 +19,10 @@ class Metriquer {
     this._testsPerBrowser = {};
 
     this._testWeatherState = new Enum({
-      'SUNNY': 'sunny',
-      'CLOUDY': 'cloudy',
-      'RAIN': 'rain',
-      'STORM': 'storm'
+      'SUNNY': 'SUN',
+      'CLOUDY': 'CLOUDY',
+      'RAIN': 'RAIN',
+      'SNOW': 'SNOW'
     });
   }
 
@@ -87,15 +88,19 @@ class Metriquer {
     switch (stateLowered) {
       case "pass":
         this._numberOfPassedTests += 1;
+        this._numberOfTests += 1;
         break;
       case "fail":
         this._numberOfFailedTests += 1;
+        this._numberOfTests += 1;
         break;
       case "skip":
         this._numberOfSkippedTests += 1;
+        this._numberOfTests += 1;
         break;
       default:
         this._numberOfSkippedTests += 1;
+        this._numberOfTests += 1;
     };
   }
 
@@ -149,6 +154,7 @@ class Metriquer {
   generateFinalReport() {
     const obj = {
       numberOfTestSuites: this._numberOfTestSuites,
+      totalTests: this._numberOfTests,
       testsState: [{
         state: 'Passed',
         total: this._numberOfPassedTests

@@ -108,11 +108,11 @@
                     </div>
                     <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
                         <span class="count_top"><i class="fa fa-list-ol"></i> Total Tests</span>
-                        <div id="total_tests" class="count">2500</div>
+                        <div id="total_tests" class="count">0</div>
                     </div>
                     <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time (sec)</span>
-                        <div id="average_time" class="count">123.50</div>
+                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time (msec)</span>
+                        <div id="average_time" class="count">0.0</div>
                     </div>
                     <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
                         <span class="count_top"><i class="fa fa-cogs"></i> Environment</span>
@@ -204,6 +204,8 @@
     <script src="js/datepicker/daterangepicker.js "></script>
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js "></script>
+    <!-- Project utils -->
+    <script src="js/utilities/utils.js"></script>
     <!-- Highcharts -->
     <script src="https://code.highcharts.com/highcharts.js "></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -211,24 +213,33 @@
     
     <!-- Skycons -->
     <script>
-    var icons = new Skycons({
-        "color": confs.colors.skycon
-    });;
-    icons.set("weather-health", Skycons.RAIN);
-    icons.play();
+    finalReportWeatherState((reportData) =>{
+        var icons = new Skycons({
+            "color": confs.colors.skycon
+        });;
+        icons.set("weather-health", Skycons[reportData]);
+        icons.play();
+    });
     </script>
     <!-- /Skycons -->
+    <!-- Total Tests -->
+    <script>
+    finalReportTotalTests((reportData) =>{
+        $('#total_tests').html(reportData);
+    });
+    </script>
+    <!-- /Total Tests -->
+    <!-- Average Time -->
+    <script>
+    finalReportAverageTime((reportData) =>{
+        $('#average_time').html(reportData);
+    });
+    </script>
+    <!-- /Average Time -->
     <!-- Doughnut Chart-->
     <script>
     $(document).ready(function() {
-        var file = '../final-report/report.json';
-        $.getJSON( file, function(reportData) {
-          var chartData = [];
-          var dataColors = [];
-          $.each(reportData.browsers, function(pos,browser){
-            chartData.push([browser,1]);
-            dataColors.push(confs.colors[browser]);
-          });
+          finalReportBrowsers((reportData) =>{
             // Build the chart
             $('#total_browser_chart').highcharts({
                 chart: {
@@ -262,14 +273,14 @@
                         startAngle: -90,
                         endAngle: 90,
                         center: ['50%', '75%'],
-                        colors: dataColors,
+                        colors: reportData.dataColors,
                     }
                 },
                 series: [{
                     type: 'pie',
                     name: '',
                     innerSize: '50%',
-                    data: chartData
+                    data: reportData.chartData
                 }]
             });
         });
@@ -279,20 +290,7 @@
     <!-- Test duration dispersion -->
     <script>
     $(document).ready(function() {
-        var file = '../final-report/report.json';
-        $.getJSON( file, function(reportData) {
-          var chartData = [];
-          $.each(reportData.testsPerBrowser, function(pos,browser){
-                var browserData = {
-                    name: pos,
-                    color: confs.colors[browser],
-                    data: []
-                };
-                $.each(browser, function(pos,browserTest){
-                    browserData.data.push([browserTest.duration,pos]);
-                });
-                chartData.push(browserData);
-          });
+        finalReportTestsDuration((reportData) =>{
             // Build the chart
             $('#tests_duration_dispersion').highcharts({
                 chart: {
@@ -300,7 +298,7 @@
                     zoomType: 'xy'
                 },
                 title: {
-                    text: 'Tests duration dispersion'
+                    text: ''
                 },
                 credits: {
                     enabled: false
@@ -355,7 +353,7 @@
                         }
                     }
                 },
-                series: chartData
+                series: reportData
                 });
         });
     });
@@ -364,20 +362,7 @@
     <!-- Stacked bar tests results chart -->
     <script>
     $(document).ready(function() {
-        var file = '../final-report/report.json';
-        $.getJSON( file, function(reportData) {
-          var chartData = [];
-          var totalTests = 0;
-          $.each(reportData.testsState, function(pos,testResult){
-            const state = testResult.state;
-            totalTests += testResult.total;
-            var elem = {
-                    name: state,
-                    data: [testResult.total],
-                    color: confs.colors[state.toLowerCase()]
-                };
-            chartData.push(elem);
-          });
+        finalReportTestsByState((reportData) =>{
             $('#total_tests_chart').highcharts({
                 chart: {
                     type: 'bar'
@@ -407,10 +392,10 @@
                 },
                 tooltip: {
                     formatter: function() {
-                        return '<b>' + this.series.name + '</b> : <b>' + this.y + '</b> (' + Math.round((this.y / totalTests) * 100,2) + '%)';
+                        return '<b>' + this.series.name + '</b> : <b>' + this.y + '</b> (' + Math.round((this.y / reportData.totalTests) * 100,2) + '%)';
                     }
                 },
-                series: chartData
+                series: reportData.chartData
             });
         });
     });
