@@ -93,7 +93,7 @@ function finalReportWeatherState(cb) {
     var finalReport = JSON.parse(response);
     cb(finalReport.testsWeatherState);
   });
-}
+};
 
 // Parses total tests
 //
@@ -103,7 +103,7 @@ function finalReportTotalTests(cb) {
     var finalReport = JSON.parse(response);
     cb(finalReport.totalTests);
   });
-}
+};
 
 // Parses total tests and total duration
 // Provides average time
@@ -115,4 +115,67 @@ function finalReportAverageTime(cb) {
     var averageTime = Math.round(finalReport.totalDuration / finalReport.totalTests, 1);
     cb(averageTime);
   });
-}
+};
+
+// Parses tests suites and total duration
+//
+function finalReportTableSuitesDeffects(cb, browser) {
+  loadJSON(function(response) {
+    // Parse JSON string into object
+    var finalReport = JSON.parse(response);
+    var reportData = {
+      columns: [{
+        title: 'Test suite'
+      }, {
+        title: 'Duration'
+      }, {
+        title: 'State'
+      }],
+      tableData: []
+    };
+    if (browser in finalReport.testsPerBrowser) {
+      const testSuites = finalReport.testsPerBrowser[browser];
+      for (var i = 0; i < testSuites.length; i++) {
+        const state = testSuites[i].state;
+        const data = [testSuites[i].testSuite, testSuites[i].duration, testSuites[i].state];
+        if (state !== 'Passed') {
+          reportData.tableData.push(data);
+        };
+      };
+    };
+    cb(reportData);
+  });
+};
+
+
+// Parses total tests cases and total duration
+//
+function finalReportTableCasesDeffects(cb, browser) {
+  loadJSON(function(response) {
+    // Parse JSON string into object
+    var finalReport = JSON.parse(response);
+    var reportData = {
+      columns: [{
+        title: 'Test suite'
+      }, {
+        title: 'Test case'
+      }, {
+        title: 'Duration'
+      }, {
+        title: 'State'
+      }],
+      tableData: []
+    };
+    if (browser in finalReport.testsPerBrowser) {
+      const testCases = finalReport.testsPerBrowser[browser];
+      for (var i = 0; i < testCases.length; i++) {
+        const state = testCases[i].state;
+        const data = [testCases[i].testSuite, testCases[i].testCase, testCases[i].duration, testCases[i].state];
+        if (state !== 'Passed') {
+          reportData.tableData.push(data);
+        };
+      };
+    };
+    cb(reportData);
+  });
+};

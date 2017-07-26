@@ -26,6 +26,32 @@ class Metriquer {
     });
   }
 
+  // Maps test state conditions to a standard one
+  //
+  standardTestState(state) {
+    const stateLC = state.toLowerCase();
+    var result;
+    switch (stateLC) {
+      case 'pass':
+      case 'passed':
+        result = 'Passed';
+        break;
+      case 'fail':
+      case 'failed':
+        result = 'Failed';
+        break;
+      case '':
+      case 'skip':
+      case 'skipped':
+        result = 'Skipped';
+        break;
+      default:
+        result = undefined;
+        break;
+    };
+    return result;
+  }
+
   // Loops through all files in path dir
   //
   parseReports(path) {
@@ -73,7 +99,7 @@ class Metriquer {
           testSuite: suiteName,
           testCase: testCaseName,
           duration: testCaseDuration,
-          state: testCaseState
+          state: this.standardTestState(testCaseState)
         };
         // Set test case description
         this.pushTestByBrowser(browserName, testCaseDescription);
@@ -129,7 +155,7 @@ class Metriquer {
     setdefault(this._testsPerBrowser, browser, []).push(testDescription);
   }
 
-  // Get _browsers for running suite
+  // Get browsers for running suite
   // 
   get browsers() {
     return _.keys(this._testsPerBrowser);
@@ -156,13 +182,13 @@ class Metriquer {
       numberOfTestSuites: this._numberOfTestSuites,
       totalTests: this._numberOfTests,
       testsState: [{
-        state: 'Passed',
+        state: this.standardTestState('Passed'),
         total: this._numberOfPassedTests
       }, {
-        state: 'Failed',
+        state: this.standardTestState('Failed'),
         total: this._numberOfFailedTests
       }, {
-        state: 'Skipped',
+        state: this.standardTestState('Skipped'),
         total: this._numberOfSkippedTests
 
       }],

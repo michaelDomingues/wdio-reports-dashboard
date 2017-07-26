@@ -122,13 +122,13 @@
                             </div>
                             <div class="x_content">
                                 <table id="test-suites-list" class="table table-striped table-bordered">
-                                    <thead>
+                                    <!--                               <thead>
                                         <tr>
                                             <th>Title</th>
                                             <th>Duration</th>
                                             <th>Overall progress</th>
                                         </tr>
-                                    </thead>
+                                    </thead> -->
                                 </table>
                             </div>
                         </div>
@@ -224,6 +224,8 @@
     <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
     <!-- Project utils -->
     <script src="js/utilities/utils.js"></script>
+    <!--  Confs file -->
+    <script type="text/javascript" src="../confs.js"></script>
     <!-- Stats header -->
     <script>
     finalReportAverageTime((reportData) => {
@@ -234,179 +236,202 @@
     <!-- Test suites -->
     <script>
     $(document).ready(function() {
-        var handleDataTableButtons = function() {
-            var table = $("#test-suites-list").DataTable({
-                dom: "Bfrtip",
-                deferRender: true,
-                scrollY: 380,
-                scrollCollapse: true,
-                scroller: true,
-                fixedHeader: true,
-                keys: true,
-                responsive: true,
-                order: [
-                    [2, "asc"]
-                ],
-                aoColumnDefs: [{
-                    "aTargets": [2], // You actual column with the string 'America'
+        finalReportTableSuitesDeffects((reportData) => {
+            var handleDataTableButtons = function() {
+                if ($("#datatable-buttons").length) {
+                    $("#test-suites-list-buttons").DataTable({
+                        dom: "Bfrtip",
+                        buttons: [{
+                                extend: "copy",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "csv",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "excel",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "pdfHtml5",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "print",
+                                className: "btn-sm"
+                            },
+                        ],
+                        responsive: true
+                    });
+                }
+            };
+
+            TableManageButtons = function() {
+                "use strict";
+                return {
+                    init: function() {
+                        handleDataTableButtons();
+                    }
+                };
+            }();
+
+            $('#test-suites-list').dataTable({
+                "data": reportData.tableData,
+                "columns": reportData.columns,
+                "pageLength": 10,
+                "aoColumnDefs": [{
+                    "aTargets": [2],
                     "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
-                        if (sData == 'PASSED') {
+                        if (sData == 'Passed') {
                             $(nTd).css('color', confs.colors.passed);
-                        } else if (sData == 'FAILED') {
+                        } else if (sData == 'Failed') {
                             $(nTd).css('color', confs.colors.failed);
-                        } else if (sData == 'SKIPPED') {
+                        } else if (sData == 'Skipped') {
                             $(nTd).css('color', confs.colors.skipped);
                         }
                     },
-                }],
-                buttons: [{
-                    extend: "copy",
-                    className: "btn-sm"
-                }, {
-                    extend: "csv",
-                    className: "btn-sm"
-                }, {
-                    extend: "excel",
-                    className: "btn-sm"
-                }, {
-                    extend: "pdfHtml5",
-                    className: "btn-sm"
-                }, {
-                    extend: "print",
-                    className: "btn-sm"
-                }, ],
-                data: [{
-                    "Title": "#chrome > #Sport Zone NorteShopping > #Store > #global",
-                    "Duration": "2m 32s",
-                    "Overall progress": "PASSED"
-                }, {
-                    "Title": "#firefox > #NorteShopping > #Shopping > #authentication",
-                    "Duration": "32s",
-                    "Overall progress": "PASSED"
-                }, {
-                    "Title": "#chrome > #Admin > #generic > #authentication",
-                    "Duration": "32s",
-                    "Overall progress": "FAILED"
-                }, {
-                    "Title": "#chrome > #Admin > #generic > #global",
-                    "Duration": "5M 4s",
-                    "Overall progress": "FAILED"
-                }, {
-                    "Title": "#chrome > #Normal > #generic > #authorization",
-                    "Duration": "5M 4s",
-                    "Overall progress": "SKIPPED"
-                }],
-                columns: [{
-                    data: "Title"
-                }, {
-                    data: "Duration"
-                }, {
-                    data: "Overall progress"
                 }]
             });
-        };
-        TableManageButtons = function() {
-            "use strict";
-            return {
-                init: function() {
-                    handleDataTableButtons();
-                }
-            };
-        }();
-        TableManageButtons.init();
+
+            $('#test-suites-list-keytable').DataTable({
+                keys: true
+            });
+
+            $('#test-suites-list-responsive').DataTable({ "responsive": true, });
+
+            $('#test-suites-list-scroller').DataTable({
+                ajax: "js/datatables/json/scroller-demo.json",
+                deferRender: true,
+                scrollY: 380,
+                scrollCollapse: true,
+                scroller: true
+            });
+
+            $('#test-suites-list-fixed-header').DataTable({
+                fixedHeader: true
+            });
+
+            var $datatable = $('#test-suites-list-checkbox');
+
+            $datatable.dataTable({
+                'order': [
+                    [1, 'asc']
+                ],
+                'columnDefs': [{
+                    "orderable": false,
+                    "targets": [0]
+                }]
+            });
+            $datatable.on('draw.dt', function() {
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_flat-green'
+                });
+            });
+
+            TableManageButtons.init();
+        }, 'chrome');
     });
     </script>
     <!-- /Test suites -->
     <!-- Test cases -->
     <script>
     $(document).ready(function() {
-        var handleDataTableButtons = function() {
-            var table = $("#test-cases-list").DataTable({
-                dom: "Bfrtip",
-                deferRender: true,
-                scrollY: 380,
-                scrollCollapse: true,
-                scroller: true,
-                fixedHeader: true,
-                keys: true,
-                responsive: true,
-                order: [
-                    [3, "asc"]
-                ],
-                aoColumnDefs: [{
+        finalReportTableCasesDeffects((reportData) => {
+            var handleDataTableButtons = function() {
+                if ($("#datatable-buttons").length) {
+                    $("#test-cases-list-buttons").DataTable({
+                        dom: "Bfrtip",
+                        buttons: [{
+                                extend: "copy",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "csv",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "excel",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "pdfHtml5",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "print",
+                                className: "btn-sm"
+                            },
+                        ],
+                        responsive: true
+                    });
+                }
+            };
+
+            TableManageButtons = function() {
+                "use strict";
+                return {
+                    init: function() {
+                        handleDataTableButtons();
+                    }
+                };
+            }();
+
+            $('#test-cases-list').dataTable({
+                "data": reportData.tableData,
+                "columns": reportData.columns,
+                "pageLength": 10,
+                "aoColumnDefs": [{
                     "aTargets": [3],
                     "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
-                        if (sData == 'PASSED') {
+                        if (sData == 'Passed') {
                             $(nTd).css('color', confs.colors.passed);
-                        } else if (sData == 'FAILED') {
+                        } else if (sData == 'Failed') {
                             $(nTd).css('color', confs.colors.failed);
-                        } else if (sData == 'SKIPPED') {
+                        } else if (sData == 'Skipped') {
                             $(nTd).css('color', confs.colors.skipped);
                         }
                     },
-                }],
-                buttons: [{
-                    extend: "copy",
-                    className: "btn-sm"
-                }, {
-                    extend: "csv",
-                    className: "btn-sm"
-                }, {
-                    extend: "excel",
-                    className: "btn-sm"
-                }, {
-                    extend: "pdfHtml5",
-                    className: "btn-sm"
-                }, {
-                    extend: "print",
-                    className: "btn-sm"
-                }, ],
-                data: [{
-                    "Master suite": "#firefox > #NorteShopping > #Shopping > #Patterns",
-                    "Title": "should enter module view",
-                    "Duration": "2m 32s",
-                    "Progress": "PASSED"
-                }, {
-                    "Master suite": "#chrome > #Sport Zone NorteShopping > #Store > #Zones",
-                    "Title": "should all chart toggles be as expected",
-                    "Duration": "32s",
-                    "Progress": "PASSED"
-                }, {
-                    "Master suite": "#firefox > #NorteShopping > #Shopping > #authentication",
-                    "Title": "should fail authentication",
-                    "Duration": "32s",
-                    "Progress": "FAILED"
-                }, {
-                    "Master suite": "#chrome > #Admin > #generic > #global",
-                    "Title": "should schedules be clickable",
-                    "Duration": "5M 4s",
-                    "Progress": "FAILED"
-                }, {
-                    "Master suite": "#chrome > #NorteShopping > #Shopping > #authentication",
-                    "Title": "\"before each\" hook",
-                    "Duration": "5M 4s",
-                    "Progress": "SKIPPED"
-                }],
-                columns: [{
-                    data: "Master suite"
-                }, {
-                    data: "Title"
-                }, {
-                    data: "Duration"
-                }, {
-                    data: "Progress"
                 }]
             });
-        };
-        TableManageButtons = function() {
-            "use strict";
-            return {
-                init: function() {
-                    handleDataTableButtons();
-                }
-            };
-        }();
-        TableManageButtons.init();
+
+            $('#test-cases-list-keytable').DataTable({
+                keys: true
+            });
+
+            $('#test-cases-list-responsive').DataTable({ "responsive": true, });
+
+            $('#test-cases-list-scroller').DataTable({
+                ajax: "js/datatables/json/scroller-demo.json",
+                deferRender: true,
+                scrollY: 380,
+                scrollCollapse: true,
+                scroller: true
+            });
+
+            $('#test-cases-list-fixed-header').DataTable({
+                fixedHeader: true
+            });
+
+            var $datatable = $('#test-cases-list-checkbox');
+
+            $datatable.dataTable({
+                'order': [
+                    [1, 'asc']
+                ],
+                'columnDefs': [{
+                    "orderable": false,
+                    "targets": [0]
+                }]
+            });
+            $datatable.on('draw.dt', function() {
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_flat-green'
+                });
+            });
+
+            TableManageButtons.init();
+        }, 'chrome');
     });
     </script>
     <!-- /Test cases -->
