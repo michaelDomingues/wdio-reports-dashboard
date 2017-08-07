@@ -13,80 +13,67 @@
     "timeout": 60000,
     "ui": "bdd"
   },
-  "suites": [
-    {
-      "name": "#firefox > #Movvo > #Store > #authentication",
-      "duration": 5454,
-      "start": "2016-08-19T15:09:02.779Z",
-      "end": "2016-08-19T15:09:08.233Z",
-      "tests": [
-        {
-          "name": "should go to dashboard endpoint",
-          "start": "2016-08-19T15:09:02.780Z",
-          "end": "2016-08-19T15:09:05.515Z",
-          "duration": 2735,
-          "state": "pass"
-        },
-        {
-          "name": "\"before each\" hook",
-          "start": "2016-08-19T15:09:10.627Z",
-          "end": "2016-08-19T15:09:10.627Z",
-          "duration": 0,
-          "state": ""
-        },
-        {
-          "name": "\"after each\" hook",
-          "start": "2016-08-19T15:09:10.650Z",
-          "end": "2016-08-19T15:09:10.650Z",
-          "duration": 0,
-          "state": ""
-        },
-        {
-          "name": "should authenticate",
-          "start": "2016-08-19T15:09:05.515Z",
-          "end": "2016-08-19T15:09:08.232Z",
-          "duration": 2717,
-          "state": "pass"
-        },
-        {
-          "name": "\"after all\" hook",
-          "start": "2016-08-19T15:09:10.650Z",
-          "end": "2016-08-19T15:09:10.650Z",
-          "duration": 0,
-          "state": ""
-        }
-      ]
-    },
-    {
-      "name": "#firefox > #Movvo > #Store > #global",
-      "duration": 2417,
-      "start": "2016-08-19T15:09:08.233Z",
+  "suites": [{
+    "name": "#firefox > #XPTO > #ABC > #authentication",
+    "duration": 5454,
+    "start": "2016-08-19T15:09:02.779Z",
+    "end": "2016-08-19T15:09:08.233Z",
+    "tests": [{
+      "name": "should go to dashboard endpoint",
+      "start": "2016-08-19T15:09:02.780Z",
+      "end": "2016-08-19T15:09:05.515Z",
+      "duration": 2735,
+      "state": "pass"
+    }, {
+      "name": "\"before each\" hook",
+      "start": "2016-08-19T15:09:10.627Z",
+      "end": "2016-08-19T15:09:10.627Z",
+      "duration": 0,
+      "state": ""
+    }, {
+      "name": "\"after each\" hook",
+      "start": "2016-08-19T15:09:10.650Z",
       "end": "2016-08-19T15:09:10.650Z",
-      "tests": [
-        {
-          "name": "\"before all\" hook",
-          "start": "2016-08-19T15:09:08.233Z",
-          "end": "2016-08-19T15:09:08.596Z",
-          "duration": 363,
-          "state": ""
-        },
-        {
-          "name": "should enter a space",
-          "start": "2016-08-19T15:09:08.596Z",
-          "end": "2016-08-19T15:09:10.627Z",
-          "duration": 2031,
-          "state": "pass"
-        },
-        {
-          "name": "should test notifications",
-          "start": "2016-08-19T15:09:10.627Z",
-          "end": "2016-08-19T15:09:10.650Z",
-          "duration": 23,
-          "state": "pass"
-        }
-      ]
-    }
-  ],
+      "duration": 0,
+      "state": ""
+    }, {
+      "name": "should authenticate",
+      "start": "2016-08-19T15:09:05.515Z",
+      "end": "2016-08-19T15:09:08.232Z",
+      "duration": 2717,
+      "state": "pass"
+    }, {
+      "name": "\"after all\" hook",
+      "start": "2016-08-19T15:09:10.650Z",
+      "end": "2016-08-19T15:09:10.650Z",
+      "duration": 0,
+      "state": ""
+    }]
+  }, {
+    "name": "#firefox > #XPTO > #ABC > #global",
+    "duration": 2417,
+    "start": "2016-08-19T15:09:08.233Z",
+    "end": "2016-08-19T15:09:10.650Z",
+    "tests": [{
+      "name": "\"before all\" hook",
+      "start": "2016-08-19T15:09:08.233Z",
+      "end": "2016-08-19T15:09:08.596Z",
+      "duration": 363,
+      "state": ""
+    }, {
+      "name": "should enter a space",
+      "start": "2016-08-19T15:09:08.596Z",
+      "end": "2016-08-19T15:09:10.627Z",
+      "duration": 2031,
+      "state": "pass"
+    }, {
+      "name": "should test notifications",
+      "start": "2016-08-19T15:09:10.627Z",
+      "end": "2016-08-19T15:09:10.650Z",
+      "duration": 23,
+      "state": "pass"
+    }]
+  }],
   "state": {
     "passed": 4,
     "failed": 0,

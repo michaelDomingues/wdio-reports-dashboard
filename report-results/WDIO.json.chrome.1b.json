@@ -13,319 +13,265 @@
     "timeout": 60000,
     "ui": "bdd"
   },
-  "suites": [
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #authentication",
-      "duration": 6096,
-      "start": "2016-08-19T15:06:48.685Z",
-      "end": "2016-08-19T15:06:54.781Z",
-      "tests": [
-        {
-          "name": "should go to dashboard endpoint",
-          "start": "2016-08-19T15:06:48.720Z",
-          "end": "2016-08-19T15:06:52.348Z",
-          "duration": 3628,
-          "state": "pass"
-        },
-        {
-          "name": "\"before each\" hook",
-          "start": "2016-08-19T15:08:09.244Z",
-          "end": "2016-08-19T15:08:09.244Z",
-          "duration": 0,
-          "state": ""
-        },
-        {
-          "name": "\"after each\" hook",
-          "start": "2016-08-19T15:08:14.255Z",
-          "end": "2016-08-19T15:08:14.255Z",
-          "duration": 0,
-          "state": ""
-        },
-        {
-          "name": "should authenticate",
-          "start": "2016-08-19T15:06:52.349Z",
-          "end": "2016-08-19T15:06:54.780Z",
-          "duration": 2431,
-          "state": "pass"
-        },
-        {
-          "name": "\"after all\" hook",
-          "start": "2016-08-19T15:08:14.255Z",
-          "end": "2016-08-19T15:08:14.255Z",
-          "duration": 0,
-          "state": ""
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #global",
-      "duration": 11092,
-      "start": "2016-08-19T15:06:54.781Z",
-      "end": "2016-08-19T15:07:05.873Z",
-      "tests": [
-        {
-          "name": "\"before all\" hook",
-          "start": "2016-08-19T15:06:54.781Z",
-          "end": "2016-08-19T15:06:55.176Z",
-          "duration": 395,
-          "state": ""
-        },
-        {
-          "name": "should enter a space",
-          "start": "2016-08-19T15:06:55.176Z",
-          "end": "2016-08-19T15:07:01.243Z",
-          "duration": 6067,
-          "state": "pass"
-        },
-        {
-          "name": "should activate a comparison period",
-          "start": "2016-08-19T15:07:01.244Z",
-          "end": "2016-08-19T15:07:04.846Z",
-          "duration": 3602,
-          "state": "pass"
-        },
-        {
-          "name": "should retrieve date picker info",
-          "start": "2016-08-19T15:07:04.846Z",
-          "end": "2016-08-19T15:07:05.873Z",
-          "duration": 1027,
-          "state": "pass"
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #Overview",
-      "duration": 9145,
-      "start": "2016-08-19T15:07:05.874Z",
-      "end": "2016-08-19T15:07:15.019Z",
-      "tests": [
-        {
-          "name": "should enter module view",
-          "start": "2016-08-19T15:07:05.874Z",
-          "end": "2016-08-19T15:07:07.224Z",
-          "duration": 1350,
-          "state": "pass"
-        },
-        {
-          "name": "should comparison data values be visible",
-          "start": "2016-08-19T15:07:07.224Z",
-          "end": "2016-08-19T15:07:09.011Z",
-          "duration": 1787,
-          "state": "pass"
-        },
-        {
-          "name": "should all chart toggles be as expected",
-          "start": "2016-08-19T15:07:09.013Z",
-          "end": "2016-08-19T15:07:15.016Z",
-          "duration": 6003,
-          "state": "pass"
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #Visits",
-      "duration": 8574,
-      "start": "2016-08-19T15:07:15.020Z",
-      "end": "2016-08-19T15:07:23.594Z",
-      "tests": [
-        {
-          "name": "should enter module view",
-          "start": "2016-08-19T15:07:15.020Z",
-          "end": "2016-08-19T15:07:16.014Z",
-          "duration": 994,
-          "state": "pass"
-        },
-        {
-          "name": "should comparison data values be visible",
-          "start": "2016-08-19T15:07:16.014Z",
-          "end": "2016-08-19T15:07:17.707Z",
-          "duration": 1693,
-          "state": "pass"
-        },
-        {
-          "name": "should all chart toggles be as expected",
-          "start": "2016-08-19T15:07:17.707Z",
-          "end": "2016-08-19T15:07:23.594Z",
-          "duration": 5887,
-          "state": "pass"
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #Durations",
-      "duration": 6577,
-      "start": "2016-08-19T15:07:23.594Z",
-      "end": "2016-08-19T15:07:30.171Z",
-      "tests": [
-        {
-          "name": "should enter module view",
-          "start": "2016-08-19T15:07:23.594Z",
-          "end": "2016-08-19T15:07:24.224Z",
-          "duration": 630,
-          "state": "pass"
-        },
-        {
-          "name": "should comparison data values be visible",
-          "start": "2016-08-19T15:07:24.224Z",
-          "end": "2016-08-19T15:07:24.383Z",
-          "duration": 159,
-          "state": "pass"
-        },
-        {
-          "name": "should all chart toggles be as expected",
-          "start": "2016-08-19T15:07:24.383Z",
-          "end": "2016-08-19T15:07:30.170Z",
-          "duration": 5787,
-          "state": "pass"
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #Levels",
-      "duration": 9302,
-      "start": "2016-08-19T15:07:30.171Z",
-      "end": "2016-08-19T15:07:39.473Z",
-      "tests": [
-        {
-          "name": "should enter module view",
-          "start": "2016-08-19T15:07:30.171Z",
-          "end": "2016-08-19T15:07:31.194Z",
-          "duration": 1023,
-          "state": "pass"
-        },
-        {
-          "name": "should comparison data values be visible",
-          "start": "2016-08-19T15:07:31.515Z",
-          "end": "2016-08-19T15:07:31.684Z",
-          "duration": 169,
-          "state": "pass"
-        },
-        {
-          "name": "should all chart toggles be as expected",
-          "start": "2016-08-19T15:07:31.684Z",
-          "end": "2016-08-19T15:07:39.473Z",
-          "duration": 7789,
-          "state": "pass"
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #Zones",
-      "duration": 11639,
-      "start": "2016-08-19T15:07:39.474Z",
-      "end": "2016-08-19T15:07:51.113Z",
-      "tests": [
-        {
-          "name": "should enter module view",
-          "start": "2016-08-19T15:07:39.474Z",
-          "end": "2016-08-19T15:07:41.872Z",
-          "duration": 2398,
-          "state": "pass"
-        },
-        {
-          "name": "should comparison data values be visible",
-          "start": "2016-08-19T15:07:42.369Z",
-          "end": "2016-08-19T15:07:42.475Z",
-          "duration": 106,
-          "state": "pass"
-        },
-        {
-          "name": "should all chart toggles be as expected",
-          "start": "2016-08-19T15:07:42.475Z",
-          "end": "2016-08-19T15:07:51.113Z",
-          "duration": 8638,
-          "state": "pass"
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #Accesses",
-      "duration": 8552,
-      "start": "2016-08-19T15:07:51.113Z",
-      "end": "2016-08-19T15:07:59.665Z",
-      "tests": [
-        {
-          "name": "should enter module view",
-          "start": "2016-08-19T15:07:51.113Z",
-          "end": "2016-08-19T15:07:52.619Z",
-          "duration": 1506,
-          "state": "pass"
-        },
-        {
-          "name": "should comparison data values be visible",
-          "start": "2016-08-19T15:07:53.076Z",
-          "end": "2016-08-19T15:07:53.222Z",
-          "duration": 146,
-          "state": "pass"
-        },
-        {
-          "name": "should all chart toggles be as expected",
-          "start": "2016-08-19T15:07:53.222Z",
-          "end": "2016-08-19T15:07:59.665Z",
-          "duration": 6443,
-          "state": "pass"
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #Patterns",
-      "duration": 6477,
-      "start": "2016-08-19T15:07:59.665Z",
-      "end": "2016-08-19T15:08:06.142Z",
-      "tests": [
-        {
-          "name": "should enter module view",
-          "start": "2016-08-19T15:07:59.665Z",
-          "end": "2016-08-19T15:08:01.109Z",
-          "duration": 1444,
-          "state": "pass"
-        },
-        {
-          "name": "should comparison data values be visible",
-          "start": "2016-08-19T15:08:01.109Z",
-          "end": "2016-08-19T15:08:01.112Z",
-          "duration": 3,
-          "state": "pass"
-        },
-        {
-          "name": "should all chart toggles be as expected",
-          "start": "2016-08-19T15:08:01.112Z",
-          "end": "2016-08-19T15:08:06.141Z",
-          "duration": 5029,
-          "state": "pass"
-        }
-      ]
-    },
-    {
-      "name": "#chrome > #NorteShopping > #Shopping > #Reports",
-      "duration": 8113,
-      "start": "2016-08-19T15:08:06.142Z",
+  "suites": [{
+    "name": "#chrome > #QWERTY > #FGH > #authentication",
+    "duration": 6096,
+    "start": "2016-08-19T15:06:48.685Z",
+    "end": "2016-08-19T15:06:54.781Z",
+    "tests": [{
+      "name": "should go to dashboard endpoint",
+      "start": "2016-08-19T15:06:48.720Z",
+      "end": "2016-08-19T15:06:52.348Z",
+      "duration": 3628,
+      "state": "pass"
+    }, {
+      "name": "\"before each\" hook",
+      "start": "2016-08-19T15:08:09.244Z",
+      "end": "2016-08-19T15:08:09.244Z",
+      "duration": 0,
+      "state": ""
+    }, {
+      "name": "\"after each\" hook",
+      "start": "2016-08-19T15:08:14.255Z",
       "end": "2016-08-19T15:08:14.255Z",
-      "tests": [
-        {
-          "name": "should enter module view",
-          "start": "2016-08-19T15:08:06.142Z",
-          "end": "2016-08-19T15:08:09.240Z",
-          "duration": 3098,
-          "state": "pass"
-        },
-        {
-          "name": "should comparison data values be visible",
-          "start": "2016-08-19T15:08:09.240Z",
-          "end": "2016-08-19T15:08:09.244Z",
-          "duration": 4,
-          "state": "pass"
-        },
-        {
-          "name": "should all chart toggles be as expected",
-          "start": "2016-08-19T15:08:09.244Z",
-          "end": "2016-08-19T15:08:14.254Z",
-          "duration": 5010,
-          "state": "pass"
-        }
-      ]
-    }
-  ],
+      "duration": 0,
+      "state": ""
+    }, {
+      "name": "should authenticate",
+      "start": "2016-08-19T15:06:52.349Z",
+      "end": "2016-08-19T15:06:54.780Z",
+      "duration": 2431,
+      "state": "pass"
+    }, {
+      "name": "\"after all\" hook",
+      "start": "2016-08-19T15:08:14.255Z",
+      "end": "2016-08-19T15:08:14.255Z",
+      "duration": 0,
+      "state": ""
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #global",
+    "duration": 11092,
+    "start": "2016-08-19T15:06:54.781Z",
+    "end": "2016-08-19T15:07:05.873Z",
+    "tests": [{
+      "name": "\"before all\" hook",
+      "start": "2016-08-19T15:06:54.781Z",
+      "end": "2016-08-19T15:06:55.176Z",
+      "duration": 395,
+      "state": ""
+    }, {
+      "name": "should enter a space",
+      "start": "2016-08-19T15:06:55.176Z",
+      "end": "2016-08-19T15:07:01.243Z",
+      "duration": 6067,
+      "state": "pass"
+    }, {
+      "name": "should activate a comparison period",
+      "start": "2016-08-19T15:07:01.244Z",
+      "end": "2016-08-19T15:07:04.846Z",
+      "duration": 3602,
+      "state": "pass"
+    }, {
+      "name": "should retrieve date picker info",
+      "start": "2016-08-19T15:07:04.846Z",
+      "end": "2016-08-19T15:07:05.873Z",
+      "duration": 1027,
+      "state": "pass"
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #Overview",
+    "duration": 9145,
+    "start": "2016-08-19T15:07:05.874Z",
+    "end": "2016-08-19T15:07:15.019Z",
+    "tests": [{
+      "name": "should enter module view",
+      "start": "2016-08-19T15:07:05.874Z",
+      "end": "2016-08-19T15:07:07.224Z",
+      "duration": 1350,
+      "state": "pass"
+    }, {
+      "name": "should comparison data values be visible",
+      "start": "2016-08-19T15:07:07.224Z",
+      "end": "2016-08-19T15:07:09.011Z",
+      "duration": 1787,
+      "state": "pass"
+    }, {
+      "name": "should all chart toggles be as expected",
+      "start": "2016-08-19T15:07:09.013Z",
+      "end": "2016-08-19T15:07:15.016Z",
+      "duration": 6003,
+      "state": "pass"
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #Visits",
+    "duration": 8574,
+    "start": "2016-08-19T15:07:15.020Z",
+    "end": "2016-08-19T15:07:23.594Z",
+    "tests": [{
+      "name": "should enter module view",
+      "start": "2016-08-19T15:07:15.020Z",
+      "end": "2016-08-19T15:07:16.014Z",
+      "duration": 994,
+      "state": "pass"
+    }, {
+      "name": "should comparison data values be visible",
+      "start": "2016-08-19T15:07:16.014Z",
+      "end": "2016-08-19T15:07:17.707Z",
+      "duration": 1693,
+      "state": "pass"
+    }, {
+      "name": "should all chart toggles be as expected",
+      "start": "2016-08-19T15:07:17.707Z",
+      "end": "2016-08-19T15:07:23.594Z",
+      "duration": 5887,
+      "state": "pass"
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #Durations",
+    "duration": 6577,
+    "start": "2016-08-19T15:07:23.594Z",
+    "end": "2016-08-19T15:07:30.171Z",
+    "tests": [{
+      "name": "should enter module view",
+      "start": "2016-08-19T15:07:23.594Z",
+      "end": "2016-08-19T15:07:24.224Z",
+      "duration": 630,
+      "state": "pass"
+    }, {
+      "name": "should comparison data values be visible",
+      "start": "2016-08-19T15:07:24.224Z",
+      "end": "2016-08-19T15:07:24.383Z",
+      "duration": 159,
+      "state": "pass"
+    }, {
+      "name": "should all chart toggles be as expected",
+      "start": "2016-08-19T15:07:24.383Z",
+      "end": "2016-08-19T15:07:30.170Z",
+      "duration": 5787,
+      "state": "pass"
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #Levels",
+    "duration": 9302,
+    "start": "2016-08-19T15:07:30.171Z",
+    "end": "2016-08-19T15:07:39.473Z",
+    "tests": [{
+      "name": "should enter module view",
+      "start": "2016-08-19T15:07:30.171Z",
+      "end": "2016-08-19T15:07:31.194Z",
+      "duration": 1023,
+      "state": "pass"
+    }, {
+      "name": "should comparison data values be visible",
+      "start": "2016-08-19T15:07:31.515Z",
+      "end": "2016-08-19T15:07:31.684Z",
+      "duration": 169,
+      "state": "pass"
+    }, {
+      "name": "should all chart toggles be as expected",
+      "start": "2016-08-19T15:07:31.684Z",
+      "end": "2016-08-19T15:07:39.473Z",
+      "duration": 7789,
+      "state": "pass"
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #Zones",
+    "duration": 11639,
+    "start": "2016-08-19T15:07:39.474Z",
+    "end": "2016-08-19T15:07:51.113Z",
+    "tests": [{
+      "name": "should enter module view",
+      "start": "2016-08-19T15:07:39.474Z",
+      "end": "2016-08-19T15:07:41.872Z",
+      "duration": 2398,
+      "state": "pass"
+    }, {
+      "name": "should comparison data values be visible",
+      "start": "2016-08-19T15:07:42.369Z",
+      "end": "2016-08-19T15:07:42.475Z",
+      "duration": 106,
+      "state": "pass"
+    }, {
+      "name": "should all chart toggles be as expected",
+      "start": "2016-08-19T15:07:42.475Z",
+      "end": "2016-08-19T15:07:51.113Z",
+      "duration": 8638,
+      "state": "pass"
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #Accesses",
+    "duration": 8552,
+    "start": "2016-08-19T15:07:51.113Z",
+    "end": "2016-08-19T15:07:59.665Z",
+    "tests": [{
+      "name": "should enter module view",
+      "start": "2016-08-19T15:07:51.113Z",
+      "end": "2016-08-19T15:07:52.619Z",
+      "duration": 1506,
+      "state": "pass"
+    }, {
+      "name": "should comparison data values be visible",
+      "start": "2016-08-19T15:07:53.076Z",
+      "end": "2016-08-19T15:07:53.222Z",
+      "duration": 146,
+      "state": "pass"
+    }, {
+      "name": "should all chart toggles be as expected",
+      "start": "2016-08-19T15:07:53.222Z",
+      "end": "2016-08-19T15:07:59.665Z",
+      "duration": 6443,
+      "state": "pass"
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #Patterns",
+    "duration": 6477,
+    "start": "2016-08-19T15:07:59.665Z",
+    "end": "2016-08-19T15:08:06.142Z",
+    "tests": [{
+      "name": "should enter module view",
+      "start": "2016-08-19T15:07:59.665Z",
+      "end": "2016-08-19T15:08:01.109Z",
+      "duration": 1444,
+      "state": "pass"
+    }, {
+      "name": "should comparison data values be visible",
+      "start": "2016-08-19T15:08:01.109Z",
+      "end": "2016-08-19T15:08:01.112Z",
+      "duration": 3,
+      "state": "pass"
+    }, {
+      "name": "should all chart toggles be as expected",
+      "start": "2016-08-19T15:08:01.112Z",
+      "end": "2016-08-19T15:08:06.141Z",
+      "duration": 5029,
+      "state": "pass"
+    }]
+  }, {
+    "name": "#chrome > #QWERTY > #FGH > #Reports",
+    "duration": 8113,
+    "start": "2016-08-19T15:08:06.142Z",
+    "end": "2016-08-19T15:08:14.255Z",
+    "tests": [{
+      "name": "should enter module view",
+      "start": "2016-08-19T15:08:06.142Z",
+      "end": "2016-08-19T15:08:09.240Z",
+      "duration": 3098,
+      "state": "pass"
+    }, {
+      "name": "should comparison data values be visible",
+      "start": "2016-08-19T15:08:09.240Z",
+      "end": "2016-08-19T15:08:09.244Z",
+      "duration": 4,
+      "state": "pass"
+    }, {
+      "name": "should all chart toggles be as expected",
+      "start": "2016-08-19T15:08:09.244Z",
+      "end": "2016-08-19T15:08:14.254Z",
+      "duration": 5010,
+      "state": "pass"
+    }]
+  }],
   "state": {
     "passed": 29,
     "failed": 0,
