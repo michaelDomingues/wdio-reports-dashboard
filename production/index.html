@@ -152,11 +152,7 @@
             </div>
             <!-- /page content /right_col -->
             <!-- footer content -->
-            <footer>
-                <div class="pull-right ">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com ">Colorlib</a>
-                </div>
-                <div class="clearfix "></div>
+            <footer id="footer">
             </footer>
             <!-- /footer content -->
         </div>
@@ -202,7 +198,10 @@
         });
     });
     </script>
-        <script>
+    <script>
+    $('#footer').load('./footer.html');
+    </script>>
+    <script>
     $(document).ready(function() {
         finalReportBrowsers((reportData) => {
             // Build the chart
