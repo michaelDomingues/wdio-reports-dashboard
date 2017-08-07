@@ -122,10 +122,21 @@
   width: 65%;
   float: left;
 }
+.profile_info2 {
+  padding: 25px 0px;
+  width: 65%;
+  float: left;
+}
 .profile_info span {
   font-size: 13px;
   line-height: 30px;
   color: #BAB8B8;
+}
+.profile_info2 span {
+  font-size: 25px;
+  line-height: 30px;
+  color: #BAB8B8;
+  margin-left:15px;
 }
 .profile_info h2 {
   font-size: 14px;
@@ -1568,13 +1579,18 @@ span.right {
   margin-top: 10px;
 }
 .tile_count .tile_stats_count {
-  border-bottom: 1px solid #D9DEE4;
+  //border-bottom: 1px solid #D9DEE4;
   padding: 0 10px 0 20px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   position: relative;
   height: 100px;
+}
+
+.stats_border {
+  border-bottom: 1px solid #D9DEE4;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 992px) {
@@ -1588,7 +1604,8 @@ span.right {
     margin-bottom: 10px;
     border-bottom: 0;
     padding-bottom: 10px;
-    padding-left: 100px;
+    //padding-left: 30px;
+    width: 135px;
   }
 }
 .tile_count .tile_stats_count:before {
@@ -1596,7 +1613,7 @@ span.right {
   position: absolute; 
   left: 0; 
   height: 75px;
-  border-left: 2px solid #ADB2B5;
+  //border-left: 2px solid #ADB2B5;
   margin-top: 10px;
 }
 @media (min-width:992px) {
@@ -1605,7 +1622,13 @@ span.right {
   }
 }
 .tile_count .tile_stats_count .count {
-  font-size: 30px;
+  font-size: 40px;
+  line-height: 47px;
+  font-weight: 600;
+  padding-top: 10px; 
+}
+.tile_count .tile_stats_count .no_count {
+  font-size: 40px;
   line-height: 47px;
   font-weight: 600;
   padding-top: 10px; 
@@ -1617,7 +1640,7 @@ span.right {
 }
 @media (min-width: 992px) and (max-width: 1100px) {
   .tile_count .tile_stats_count .count {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 .tile_count .tile_stats_count span {

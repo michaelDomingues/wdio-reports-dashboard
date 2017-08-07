@@ -7,52 +7,41 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QA Report</title>
-    <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- bootstrap-progressbar -->
-    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
-    <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <title>confs.reportName</title>
     <!--  Confs file -->
     <script type="text/javascript" src="../confs.js"></script>
 </head>
-<div id="stats_header" class="row tile_count">
-    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="fa fa-cloud"></i> Health</span>
-        <div class="count">
-            <canvas id="weather-health" height="48" width="48"></canvas>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="fa fa-list-ol"></i> Total Tests</span>
-        <div id="total_tests" class="count">0</div>
-    </div>
-    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time (msec)</span>
-        <div id="average_time" class="count">0.0</div>
-    </div>
-    <div class="col-md-3 col-sm-4 col-xs-4 tile_stats_count">
-        <span class="count_top"><i class="fa fa-cogs"></i> Environment</span>
-        <div id="environment" class="count">Dev</div>
+<div class="col-md-3 col-sm-2 col-xs-4 tile_stats_count">
+    <span class="count_top"><i class="fa fa-cloud"></i> Health</span>
+    <div class="no_count">
+        <canvas id="weather-health" height="48" width="48"></canvas>
     </div>
 </div>
-
+<div class="col-md-3 col-sm-2 col-xs-4 tile_stats_count">
+    <span class="count_top"><i class="fa fa-list-ol"></i> Total Suites</span>
+    <div id="total_suites" class="count">0</div>
+</div>
+<div class="col-md-3 col-sm-2 col-xs-4 tile_stats_count">
+    <span class="count_top"><i class="fa fa-list-ol"></i> Total Tests</span>
+    <div id="total_tests" class="count">0</div>
+</div>
+<div class="col-md-3 col-sm-2 col-xs-4 tile_stats_count">
+    <span class="count_top"><i class="fa fa-clock-o"></i> Average Time (msec)</span>
+    <div id="average_time" class="count">0.0</div>
+</div>
+<div class="col-md-3 col-sm-2 col-xs-4 tile_stats_count">
+    <span class="count_top"><i class="fa fa-cogs"></i> Environment</span>
+    <div id="environment" class="count">Dev</div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 stats_border">
+    </div>
+</div>
 <!-- Project utils -->
 <script src="js/utilities/utils.js"></script>
 <!-- jQuery -->
 <script src="../vendors/jquery/dist/jquery.min.js "></script>
-<!-- Skycons -->
 <script src="../vendors/skycons/skycons.js "></script>
-<!-- Skycons -->
 <!-- Bootstrap -->
 <script src="../vendors/bootstrap/dist/js/bootstrap.min.js "></script>
 <script>
@@ -64,20 +53,25 @@ finalReportWeatherState((reportData) => {
     icons.play();
 });
 </script>
-<!-- /Skycons -->
-<!-- Total Tests -->
+<script>
+finalReportTotalSuites((reportData) => {
+    $('#total_suites').html(reportData);
+});
+</script>
 <script>
 finalReportTotalTests((reportData) => {
     $('#total_tests').html(reportData);
 });
 </script>
-<!-- /Total Tests -->
-<!-- Average Time -->
 <script>
 finalReportAverageTime((reportData) => {
     $('#average_time').html(reportData);
 });
 </script>
-<!-- /Average Time -->
+<script>
+finalReportTestingEnvironment((reportData) => {
+    $('#environment').html(reportData);
+});
+</script>
 
 </html>

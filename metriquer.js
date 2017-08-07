@@ -17,7 +17,10 @@ class Metriquer {
     this._totalDuration = 0;
     this._browsers = [];
     this._testsPerBrowser = {};
+    this._testsCountPerBrowserPerState = {};
+    this._testsCountPerSuitePerState = {};
 
+    // Restricted to Skycons compatibility 
     this._testWeatherState = new Enum({
       'SUNNY': 'SUN',
       'CLOUDY': 'CLOUDY',
@@ -89,8 +92,11 @@ class Metriquer {
         const testCaseDuration = testCase.duration;
         const testCaseState = testCase.state;
 
-        // Increment number of tests by state
-        this.incTestsByState(testCaseState);
+        // Increment number of tests by browser and by test state
+        this.incTestsByBrowserByState(testCaseState, browserName, suiteName);
+
+        // Increment number of tests per browser per state 
+        this.incTestsByBrowserByState(testCaseState, browserName, suiteName);
 
         // Increment global execution duration
         this.incExecutionDuration(testCaseDuration);
@@ -107,26 +113,38 @@ class Metriquer {
     });
   }
 
-  // Increments the number of tests per type of test.
+  // Increments the number of tests per browser and per type of test.
   // 
-  incTestsByState(state) {
-    var stateLowered = state.toLowerCase();
-    switch (stateLowered) {
-      case "pass":
+  incTestsByBrowserByState(state, browser, suite) {
+    state = this.standardTestState(state);
+    setdefault(this._testsCountPerBrowserPerState, browser, {});
+    setdefault(this._testsCountPerBrowserPerState[browser], state, 0);
+    setdefault(this._testsCountPerSuitePerState, suite, {});
+    setdefault(this._testsCountPerSuitePerState[suite], state, 0);
+    switch (state) {
+      case "Passed":
         this._numberOfPassedTests += 1;
         this._numberOfTests += 1;
+        this._testsCountPerBrowserPerState[browser][state] += 1;
+        this._testsCountPerSuitePerState[suite][state] += 1;
         break;
-      case "fail":
+      case "Failed":
         this._numberOfFailedTests += 1;
         this._numberOfTests += 1;
+        this._testsCountPerBrowserPerState[browser][state] += 1;
+        this._testsCountPerSuitePerState[suite][state] += 1;
         break;
-      case "skip":
+      case "Skipped":
         this._numberOfSkippedTests += 1;
         this._numberOfTests += 1;
+        this._testsCountPerBrowserPerState[browser][state] += 1;
+        this._testsCountPerSuitePerState[suite][state] += 1;
         break;
       default:
         this._numberOfSkippedTests += 1;
         this._numberOfTests += 1;
+        this._testsCountPerBrowserPerState[browser]['Skipped'] += 1;
+        this._testsCountPerSuitePerState[suite]['Skipped'] += 1;
     };
   }
 
@@ -179,8 +197,10 @@ class Metriquer {
   //
   generateFinalReport() {
     const obj = {
+      environment: "Dev",
       numberOfTestSuites: this._numberOfTestSuites,
       totalTests: this._numberOfTests,
+      browsers: this.browsers,
       testsState: [{
         state: this.standardTestState('Passed'),
         total: this._numberOfPassedTests
@@ -192,9 +212,10 @@ class Metriquer {
         total: this._numberOfSkippedTests
 
       }],
+      testsPerBrowserPerState: this._testsCountPerBrowserPerState,
+      testsPerSuitePerState: this._testsCountPerSuitePerState,
       testsWeatherState: this.weatherState,
       totalDuration: this._totalDuration,
-      browsers: this.browsers,
       testsPerBrowser: this._testsPerBrowser
     };
 

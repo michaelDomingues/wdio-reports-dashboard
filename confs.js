@@ -8,6 +8,7 @@ var confs = {
     safari: "blue",
     firefox: "orange"
   },
+  reportName: "QA Report",
   reports: "report-results",
   finalReport: "final-report"
 }
