@@ -57,7 +57,7 @@ class Metriquer {
 
   // Loops through all files in path dir
   //
-  parseReports(path) {
+  parseReports() {
     fs.readdir(this._reports, (err, items) => {
       for (var i = 0; i < items.length; i++) {
         const fileContent = JSON.parse(fs.readFileSync(this._reports + '/' + items[i], 'utf8'));
@@ -225,6 +225,7 @@ class Metriquer {
       if (err !== null) {
         console.error('Error saving JSON to file:', err)
       }
+      console.info('Report generated successfully.');
     });
   }
 }
