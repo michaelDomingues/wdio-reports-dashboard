@@ -2057,6 +2057,9 @@ input.parsley-error, textarea.parsley-error, select.parsley-error {
   left: -13px;
   top: 1px; }
 
+table.dataTable thead .sorting_asc::after, table.dataTable thead .sorting_desc::after, table.dataTable thead .sorting_asc_disabled::after, table.dataTable thead .sorting_desc_disabled::after {
+  opacity: 1; }
+
 .item.bad .alert {
   left: 0;
   opacity: 1; }

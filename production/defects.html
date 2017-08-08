@@ -240,6 +240,7 @@
             $('#test-suites-list').dataTable({
                 "data": reportData.tableData,
                 "columns": reportData.columns,
+                "order": [[ 1, "desc" ]],
                 "pageLength": 10,
                 "aoColumnDefs": [{
                     "aTargets": [2],
@@ -277,7 +278,7 @@
 
             $datatable.dataTable({
                 'order': [
-                    [1, 'asc']
+                    [1, 'desc']
                 ],
                 'columnDefs': [{
                     "orderable": false,
@@ -340,6 +341,7 @@
                 "data": reportData.tableData,
                 "columns": reportData.columns,
                 "pageLength": 10,
+                "order": [[ 2, "desc" ]],
                 "aoColumnDefs": [{
                     "aTargets": [3],
                     "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
