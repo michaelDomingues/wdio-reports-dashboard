@@ -47,7 +47,7 @@ If `gulp` is installed, follow the steps below.
 
 1. Fork and clone the repo.
 2. Run `make`, this will install all dependencies and open the dashboard on your default browser
-3. Now any changes can be made to the project!
+3. Now changes can be made to the project!
 4. Submit a pull request
 
 
