@@ -37,12 +37,31 @@ Before running the installation setup in the **Makefile** is necessary to have i
 
 After you have done that just run: `make install`.
 
-## Data report update
+### Specs
+
+##### Data report update
 
 The resulting report from the aggregation is parsed by the server side and cached in the session storage, upon the first read.
 This means that on a new session it will load the data again on the first visit. 
 
 In case of the report file is replaced with a new one it's enough to open a new browser session to load the updated information.
+
+
+##### Supported browsers and test states
+
+In order to support the correct parse and rendering of all browsers and test states, it is necessary to define those values and the UI colors for each in the [configuration file](https://github.com/michaelDomingues/wdio-reports-dashboard/blob/master/confs.js)
+
+If not mentioned, it can cause the test states to not be rendered or using the default colors provided by the libraries.
+
+```
+    passed: "#04af65",
+    failed: "red",
+    skipped: "#cccc00",
+    skycon: "#73879C",
+    chrome: "red",
+    safari: "blue",
+	firefox: "orange"
+```
 
 ## How to contribute
 To contribute, please ensure that you have stable [Node.js](https://nodejs.org/) and [npm](https://npmjs.com) installed.
