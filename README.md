@@ -37,9 +37,9 @@ Before running the installation setup in the **Makefile** is necessary to have i
 
 After you have done that just run: `make install`.
 
-### Specs
+## Specs
 
-##### Data report update
+#### Data report update
 
 The resulting report from the aggregation is parsed by the server side and cached in the session storage, upon the first read.
 This means that on a new session it will load the data again on the first visit. 
@@ -47,7 +47,7 @@ This means that on a new session it will load the data again on the first visit.
 In case of the report file is replaced with a new one it's enough to open a new browser session to load the updated information.
 
 
-##### Supported browsers and test states
+#### Supported browsers and test states
 
 In order to support the correct parse and rendering of all browsers and test states, it is necessary to define those values and the UI colors for each in the [configuration file](https://github.com/michaelDomingues/wdio-reports-dashboard/blob/master/confs.js)
 
