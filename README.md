@@ -3,7 +3,7 @@
 Automation reporter proposes a central way to display end to end results from automation frameworks.
 It uses the core reports to produce an unique one with several *KPIs* that are shown in the dashboard.
 
-For the dashboard itself it's used the Gentella Admin template (developed by [Colorlib](https://colorlib.com/ "Colorlib - Make Your First Blog")), customized for the goals of the *Automation Reporter* project. This template uses the default Bootstrap 3 styles along with a variety of powerful jQuery plugins and tools to create a powerful framework for creating admin panels or back-end dashboards.
+For the dashboard itself it's used the Gentella template (developed by [Colorlib](https://colorlib.com/ "Colorlib - Make Your First Blog")), customized for the goals of the *Automation Reporter* project. This template uses the default Bootstrap 3 styles along with a variety of powerful jQuery plugins and tools to create a powerful framework for creating admin panels or back-end dashboards.
 
 Theme uses several libraries for charts, calendar, form validation, wizard style interface, off-canvas navigation menu, text forms, date range, upload area, form autocomplete, range slider, progress bars, notifications and much more.
 
@@ -24,8 +24,8 @@ More to be added in the future.
 
 In order to use this project and integrate the report data into the dashboard, it's important to:
 
-* Generate the automation frameworks to **JSON** output.
-* Place the report files into `report-results`.
+* Generate the automation frameworks reports to **JSON** output.
+* Place those into `report-results`.
 
 
 The aggregated report is pushed into the `final-report` directory, which the dashboard will read from.
@@ -37,6 +37,12 @@ Before running the installation setup in the **Makefile** is necessary to have i
 
 After you have done that just run: `make install`.
 
+## Data report update
+
+The resulting report from the aggregation is parsed by the server side and cached in the session storage, upon the first read.
+This means that on a new session it will load the data again on the first visit. 
+
+In case of the report file is replaced with a new one it's enough to open a new browser session to load the updated information.
 
 ## How to contribute
 To contribute, please ensure that you have stable [Node.js](https://nodejs.org/) and [npm](https://npmjs.com) installed.
