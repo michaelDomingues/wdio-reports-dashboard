@@ -60,7 +60,7 @@ If not mentioned, it can cause the test states to not be rendered or using the d
     skycon: "#73879C",
     chrome: "red",
     safari: "blue",
-	firefox: "orange"
+    firefox: "orange"
 ```
 
 ## How to contribute
