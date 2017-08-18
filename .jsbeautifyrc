@@ -1,0 +1,6 @@
+{
+  "indent_size": 2,
+  "end_with_newline": true,
+  "format_on_save":true
+  //"jslint_happy": true
+}
